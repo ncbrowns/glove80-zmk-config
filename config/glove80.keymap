@@ -80,7 +80,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "NAV_LAYER";
             #binding-cells = <0>;
-            bindings = <&nav_with_lights>, <&nav_on_with_lights>;
+            bindings = <&mo 3>, <&tog 3>;
         };
     };
 
@@ -220,12 +220,12 @@
 
         Navigation {
             bindings = <
-&trans     &trans    &trans    &trans     &trans                                                                                                 &trans    &trans    &trans     &trans     &trans
-&kp GRAVE  &trans    &trans    &trans     &trans     &trans                                                                              &trans  &trans    &trans    &trans     &trans     &kp UNDERSCORE
-&trans     &trans    &trans    &trans     &trans     &trans                                                                              &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans     &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                                                                              &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans     &trans    &trans    &trans     &trans     &trans  &nav_off_with_lights  &trans  &trans  &trans  &trans  &nav_off_with_lights  &trans  &trans    &trans    &trans     &trans     &trans
-&trans     &trans    &trans    &trans     &trans             &trans                &trans  &trans  &trans  &trans  &trans                        &trans    &trans    &trans     &trans     &trans
+&trans     &trans    &trans    &trans     &trans                                                                     &trans    &trans    &trans     &trans     &trans
+&kp GRAVE  &trans    &trans    &trans     &trans     &trans                                                  &trans  &trans    &trans    &trans     &trans     &kp UNDERSCORE
+&trans     &trans    &trans    &trans     &trans     &trans                                                  &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&trans     &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                                                  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans     &trans    &trans    &trans     &trans     &trans  &tog 3  &trans  &trans  &trans  &trans  &tog 3  &trans  &trans    &trans    &trans     &trans     &trans
+&trans     &trans    &trans    &trans     &trans             &trans  &trans  &trans  &trans  &trans  &trans          &trans    &trans    &trans     &trans     &trans
             >;
         };
     };
