@@ -234,12 +234,12 @@
 
         Navigation {
             bindings = <
-&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV      &kp C_PLAY_PAUSE  &kp C_NEXT                                                                     &kp C_VOL_DN  &kp C_MUTE  &kp C_VOLUME_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
-&trans           &trans      &trans          &trans            &trans      &trans                                                  &trans     &trans        &trans      &trans           &trans          &trans
-&trans           &kp GRAVE   &triple_bquote  &trans            &trans      &trans                                                  &kp PG_UP  &kp HOME      &kp UP      &kp END          &thanks_pat     &trans
-&trans           &sk LGUI    &sk LALT        &sk LCTRL         &sk LSHFT   &trans                                                  &kp PG_DN  &kp LEFT      &kp DOWN    &kp RIGHT        &trans          &trans
-&trans           &kp LC(Z)   &kp LC(X)       &kp LC(C)         &kp LC(V)   &trans  &tog 3  &trans  &trans  &trans  &trans  &tog 3  &trans     &trans        &trans      &trans           &trans          &trans
-&trans           &trans      &trans          &trans            &trans              &trans  &trans  &trans  &trans  &trans  &trans             &trans        &trans      &trans           &trans          &trans
+&kp PRINTSCREEN  &kp SYSREQ  &kp K_PREV      &kp K_PLAY_PAUSE  &kp K_NEXT                                                                     &kp K_VOLUME_DOWN  &kp K_MUTE  &kp K_VOLUME_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
+&trans           &trans      &trans          &trans            &trans      &trans                                                  &trans     &trans             &trans      &trans           &trans          &trans
+&trans           &kp GRAVE   &triple_bquote  &trans            &trans      &trans                                                  &kp PG_UP  &kp HOME           &kp UP      &kp END          &thanks_pat     &trans
+&trans           &sk LGUI    &sk LALT        &sk LCTRL         &sk LSHFT   &trans                                                  &kp PG_DN  &kp LEFT           &kp DOWN    &kp RIGHT        &trans          &trans
+&trans           &kp LC(Z)   &kp LC(X)       &kp LC(C)         &kp LC(V)   &trans  &tog 3  &trans  &trans  &trans  &trans  &tog 3  &trans     &trans             &trans      &trans           &trans          &trans
+&trans           &trans      &trans          &trans            &trans              &trans  &trans  &trans  &trans  &trans  &trans             &trans             &trans      &trans           &trans          &trans
             >;
         };
     };
