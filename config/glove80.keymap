@@ -174,19 +174,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        f11_combo {
-            bindings = <&kp F11>;
-            key-positions = <8 20>;
-        };
-
-        f12_combo {
-            bindings = <&kp F12>;
-            key-positions = <9 21>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -235,8 +223,8 @@
         Navigation {
             bindings = <
 &kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV      &kp C_PP   &kp C_NEXT                                                                     &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
-&trans           &trans      &trans          &trans     &trans      &trans                                                  &trans     &trans        &trans      &trans        &trans          &trans
-&trans           &kp GRAVE   &triple_bquote  &trans     &trans      &trans                                                  &kp PG_UP  &kp HOME      &kp UP      &kp END       &thanks_pat     &trans
+&trans           &trans      &trans          &trans     &trans      &trans                                                  &trans     &trans        &trans      &trans        &trans          &kp F11
+&trans           &kp GRAVE   &triple_bquote  &kp MINUS  &trans      &trans                                                  &kp PG_UP  &kp HOME      &kp UP      &kp END       &thanks_pat     &kp F12
 &trans           &sk LGUI    &sk LALT        &sk LCTRL  &sk LSHFT   &trans                                                  &kp PG_DN  &kp LEFT      &kp DOWN    &kp RIGHT     &trans          &trans
 &trans           &kp LC(Z)   &kp LC(X)       &kp LC(C)  &kp LC(V)   &trans  &tog 3  &trans  &trans  &trans  &trans  &tog 3  &trans     &trans        &trans      &trans        &trans          &trans
 &trans           &trans      &trans          &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans             &trans        &trans      &trans        &trans          &trans
