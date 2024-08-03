@@ -24,14 +24,6 @@
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
 
-        lower_layer: lower_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LOWER_LAYER";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo 0>, <&to 0>;
-        };
-
         magic: magic_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MAGIC_HOLD_TAP";
@@ -76,13 +68,6 @@
             bindings = <&kp LSHIFT>, <&tog 3>;
         };
 
-        nav_layer: nav_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_LAYER";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&tog 1>;
-        };
-
         layer_sticky_tap_or_hold: layer_sticky_tap_or_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_STICKY_TAP_OR_HOLD";
@@ -106,15 +91,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-        };
-
-        add_eq_if_shift: add_eq_if_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ADD_EQ_IF_SHIFT";
-            bindings = <&none>, <&kp EQUAL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         curly_morph: curly_morph {
@@ -142,6 +118,87 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sym_or_eq: sym_or_eq {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYM_OR_EQ";
+            bindings = <&add_equal>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        td_plus: td_plus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PLUS";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq PLUS PLUS>, <&double_tap PLUS>;
+        };
+
+        td_minus: td_minus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MINUS";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq MINUS MINUS>, <&double_tap MINUS>;
+        };
+
+        td_eq: td_eq {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EQ";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq EQUAL EQUAL>, <&double_tap EQUAL>;
+        };
+
+        td_not: td_not {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NOT";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq EXCL EXCL>, <&double_tap EXCL>;
+        };
+
+        td_lt: td_lt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LT";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq LT LT>, <&double_tap LT>;
+        };
+
+        td_gt: td_gt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_GT";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq GT GT>, <&double_tap GT>;
+        };
+
+        td_or: td_or {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OR";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq PIPE PIPE>, <&double_tap PIPE>;
+        };
+
+        td_and: td_and {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_AND";
+            #binding-cells = <0>;
+            bindings =
+                <&sym_or_eq AMPERSAND AMPERSAND>,
+                <&double_tap AMPERSAND>;
+        };
+
+        td_xor: td_xor {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_XOR";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq CARET CARET>, <&double_tap CARET>;
+        };
+
+        td_slash: td_slash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SLASH";
+            #binding-cells = <0>;
+            bindings = <&sym_or_eq SLASH SLASH>, <&double_tap SLASH>;
         };
     };
 
@@ -224,13 +281,6 @@
             label = "TAB_SWITCH";
         };
 
-        symbol_opt_equal: symbol_opt_equal {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &add_eq_if_shift>;
-            label = "SYMBOL_OPT_EQUAL";
-        };
-
         curly_pair: curly_pair {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -257,6 +307,20 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS &kp GT>;
             label = "ARROW";
+        };
+
+        add_equal: add_equal {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &kp EQUAL>;
+            label = "ADD_EQUAL";
+        };
+
+        double_tap: double_tap {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "DOUBLE_TAP";
         };
     };
 
@@ -297,12 +361,12 @@
 
         Symbol {
             bindings = <
-&trans  &trans                   &trans                      &trans                     &trans                                                                                            &trans          &trans        &trans                   &trans                          &trans
-&trans  &trans                   &trans                      &trans                     &trans                       &trans                                                  &trans       &trans          &trans        &trans                   &trans                          &trans
-&trans  &kp GRAVE                &symbol_opt_equal CARET     &symbol_opt_equal PIPE     &symbol_opt_equal AMPERSAND  &trans                                                  &kp AT_SIGN  &curly_morph    &kp LS(RBRC)  &symbol_opt_equal LT     &symbol_opt_equal GREATER_THAN  &trans
-&trans  &symbol_opt_equal TILDE  &symbol_opt_equal ASTERISK  &symbol_opt_equal MINUS    &symbol_opt_equal PLUS       &trans                                                  &kp DOLLAR   &paren_morph    &kp LS(RPAR)  &symbol_opt_equal EQUAL  &symbol_opt_equal EXCLAMATION   &trans
-&trans  &triple_bquote           &trans                      &symbol_opt_equal PERCENT  &symbol_opt_equal SLASH      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HASH     &bracket_morph  &kp RBKT      &symbol_opt_equal DOT    &arrow                          &trans
-&trans  &trans                   &trans                      &trans                     &trans                               &trans  &trans  &trans  &trans  &trans  &trans               &trans          &trans        &trans                   &trans                          &trans
+&trans  &trans                  &trans                        &trans                      &trans                                                                                                &trans          &trans        &trans              &trans   &trans
+&trans  &trans                  &trans                        &trans                      &trans     &trans                                                                        &trans       &trans          &trans        &trans              &trans   &trans
+&trans  &kp GRAVE               &td_xor                       &td_or                      &td_and    &sym_or_eq QUESTION QUESTION                                                  &kp AT_SIGN  &curly_morph    &kp LS(RBRC)  &td_lt              &td_gt   &trans
+&trans  &sym_or_eq TILDE TILDE  &sym_or_eq ASTERISK ASTERISK  &td_minus                   &td_plus   &trans                                                                        &kp DOLLAR   &paren_morph    &kp LS(RPAR)  &td_eq              &td_not  &trans
+&trans  &triple_bquote          &trans                        &sym_or_eq PERCENT PERCENT  &td_slash  &trans                        &trans  &trans  &trans  &trans  &trans  &trans  &kp HASH     &bracket_morph  &kp RBKT      &sym_or_eq DOT DOT  &arrow   &trans
+&trans  &trans                  &trans                        &trans                      &trans                                   &trans  &trans  &trans  &trans  &trans  &trans               &trans          &trans        &trans              &trans   &trans
             >;
         };
 
