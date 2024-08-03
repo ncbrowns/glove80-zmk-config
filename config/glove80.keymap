@@ -214,12 +214,12 @@
             #binding-cells = <2>;
             bindings =
                 <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 5>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 4>,
                 <&macro_tap>,
                 <&macro_param_2to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 5>;
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 4>;
 
             label = "TAB_SWITCH";
         };
@@ -251,6 +251,13 @@
             bindings = <&kp LBKT &kp RBKT &kp LEFT>;
             label = "BRACKET_PAIR";
         };
+
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "ARROW";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -273,7 +280,7 @@
 &kp TAB      &kp Q     &kp W    &kp E     &kp R      &kp T                                                                            &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp ESC      &kp A     &kp S    &kp D     &kp F      &kp G                                                                            &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
 &shift_caps  &kp Z     &kp X    &kp C     &kp V      &kp B   &sym_nav_lock  &kp LCTRL   &kp LWIN  &kp RWIN  &kp RCTRL  &sym_nav_lock  &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &shift_caps
-&magic 4 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp BSPC       &kp DELETE  &kp LALT  &kp RALT  &kp ENTER  &kp SPACE              &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
+&magic 5 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp BSPC       &kp DELETE  &kp LALT  &kp RALT  &kp ENTER  &kp SPACE              &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
             >;
         };
 
@@ -294,7 +301,7 @@
 &trans  &trans                   &trans                      &trans                     &trans                       &trans                                                  &trans       &trans          &trans        &trans                   &trans                          &trans
 &trans  &kp GRAVE                &symbol_opt_equal CARET     &symbol_opt_equal PIPE     &symbol_opt_equal AMPERSAND  &trans                                                  &kp AT_SIGN  &curly_morph    &kp LS(RBRC)  &symbol_opt_equal LT     &symbol_opt_equal GREATER_THAN  &trans
 &trans  &symbol_opt_equal TILDE  &symbol_opt_equal ASTERISK  &symbol_opt_equal MINUS    &symbol_opt_equal PLUS       &trans                                                  &kp DOLLAR   &paren_morph    &kp LS(RPAR)  &symbol_opt_equal EQUAL  &symbol_opt_equal EXCLAMATION   &trans
-&trans  &triple_bquote           &trans                      &symbol_opt_equal PERCENT  &symbol_opt_equal SLASH      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HASH     &bracket_morph  &kp RBKT      &symbol_opt_equal DOT    &trans                          &trans
+&trans  &triple_bquote           &trans                      &symbol_opt_equal PERCENT  &symbol_opt_equal SLASH      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HASH     &bracket_morph  &kp RBKT      &symbol_opt_equal DOT    &arrow                          &trans
 &trans  &trans                   &trans                      &trans                     &trans                               &trans  &trans  &trans  &trans  &trans  &trans               &trans          &trans        &trans                   &trans                          &trans
             >;
         };
@@ -310,17 +317,6 @@
             >;
         };
 
-        magic_layer {
-            bindings = <
-&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
-&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
-&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &none
-            >;
-        };
-
         TabSwitcher {
             bindings = <
 &none  &none        &none    &none  &none                                                                &none         &none         &none    &none  &none
@@ -329,6 +325,17 @@
 &none  &kp LS(TAB)  &kp TAB  &none  &none  &none                                            &kp LS(TAB)  &kp DOWN      &kp UP_ARROW  &kp TAB  &none  &none
 &none  &none        &none    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none        &none         &none         &none    &none  &none
 &none  &none        &none    &none  &none         &none  &none  &none  &none  &none  &none               &kp UP_ARROW  &kp DOWN      &none    &none  &none
+            >;
+        };
+
+        magic_layer {
+            bindings = <
+&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
+&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
+&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
+&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
+&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &none
             >;
         };
     };
