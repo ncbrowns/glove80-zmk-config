@@ -107,6 +107,42 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        add_eq_if_shift: add_eq_if_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ADD_EQ_IF_SHIFT";
+            bindings = <&none>, <&kp EQUAL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        curly_morph: curly_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CURLY_MORPH";
+            bindings = <&kp LEFT_BRACE>, <&curly_pair>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        paren_morph: paren_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PAREN_MORPH";
+            bindings = <&kp LEFT_PARENTHESIS>, <&paren_pair>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bracket_morph: bracket_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACKET_MORPH";
+            bindings = <&kp LEFT_BRACKET>, <&bracket_pair>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -187,6 +223,34 @@
 
             label = "TAB_SWITCH";
         };
+
+        symbol_opt_equal: symbol_opt_equal {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &add_eq_if_shift>;
+            label = "SYMBOL_OPT_EQUAL";
+        };
+
+        curly_pair: curly_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RBRC &kp LEFT>;
+            label = "CURLY_PAIR";
+        };
+
+        paren_pair: paren_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PAREN_PAIR";
+        };
+
+        bracket_pair: bracket_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "BRACKET_PAIR";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -226,12 +290,12 @@
 
         Symbol {
             bindings = <
-&trans  &trans          &trans  &trans  &trans                                                                  &trans        &trans        &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans                                                  &trans  &trans        &trans        &trans  &trans  &trans
-&trans  &kp GRAVE       &trans  &trans  &trans  &trans                                                  &trans  &kp LS(LBRC)  &kp LS(RBRC)  &trans  &trans  &trans
-&trans  &kp TILDE       &trans  &trans  &trans  &trans                                                  &trans  &kp LS(LPAR)  &kp LS(RPAR)  &trans  &trans  &trans
-&trans  &triple_bquote  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LBKT      &kp RBKT      &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans        &trans  &trans  &trans
+&trans  &trans                   &trans                      &trans                     &trans                                                                                            &trans          &trans        &trans                   &trans                          &trans
+&trans  &trans                   &trans                      &trans                     &trans                       &trans                                                  &trans       &trans          &trans        &trans                   &trans                          &trans
+&trans  &kp GRAVE                &symbol_opt_equal CARET     &symbol_opt_equal PIPE     &symbol_opt_equal AMPERSAND  &trans                                                  &kp AT_SIGN  &curly_morph    &kp LS(RBRC)  &symbol_opt_equal LT     &symbol_opt_equal GREATER_THAN  &trans
+&trans  &symbol_opt_equal TILDE  &symbol_opt_equal ASTERISK  &symbol_opt_equal MINUS    &symbol_opt_equal PLUS       &trans                                                  &kp DOLLAR   &paren_morph    &kp LS(RPAR)  &symbol_opt_equal EQUAL  &symbol_opt_equal EXCLAMATION   &trans
+&trans  &triple_bquote           &trans                      &symbol_opt_equal PERCENT  &symbol_opt_equal SLASH      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HASH     &bracket_morph  &kp RBKT      &symbol_opt_equal DOT    &trans                          &trans
+&trans  &trans                   &trans                      &trans                     &trans                               &trans  &trans  &trans  &trans  &trans  &trans               &trans          &trans        &trans                   &trans                          &trans
             >;
         };
 
