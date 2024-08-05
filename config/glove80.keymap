@@ -228,6 +228,17 @@
             #binding-cells = <0>;
             bindings = <&sym_or_eq SLASH SLASH>, <&double_tap SLASH>;
         };
+
+        thumb_mods: thumb_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <1000>;
+            require-prior-idle-ms = <170>;
+            quick-tap-ms = <300>;
+        };
     };
 
     macros {
@@ -362,12 +373,12 @@
 
         Base {
             bindings = <
-&kp F1       &kp F2    &kp F3   &kp F4    &kp F5                                                                                              &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
-&kp EQUAL    &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                           &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB      &kp Q     &kp W    &kp E     &kp R      &kp T                                                                            &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC      &kp A     &kp S    &kp D     &kp F      &kp G                                                                            &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&shift_caps  &kp Z     &kp X    &kp C     &kp V      &kp B   &sym_nav_lock  &kp LCTRL   &kp LWIN  &kp RWIN  &kp RCTRL  &sym_nav_lock  &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &shift_caps
-&magic 6 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp BACKSPACE  &kp DELETE  &kp LALT  &kp RALT  &kp ENTER  &kp SPACE              &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
+&kp F1       &kp F2    &kp F3   &kp F4    &kp F5                                                                                                                                                   &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
+&kp EQUAL    &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                                                                &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB      &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                                                                 &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&kp ESC      &kp A     &kp S    &kp D     &kp F      &kp G                                                                                                                                 &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+&shift_caps  &kp Z     &kp X    &kp C     &kp V      &kp B   &sym_nav_lock                &kp LCTRL                 &kp LWIN  &kp RWIN  &kp RCTRL                &sym_nav_lock             &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &shift_caps
+&magic 6 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &thumb_mods LSHFT BACKSPACE  &thumb_mods LCTRL DELETE  &kp LALT  &kp RALT  &thumb_mods RCTRL ENTER  &thumb_mods RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
             >;
         };
 
