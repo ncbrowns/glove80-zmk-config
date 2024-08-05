@@ -241,6 +241,7 @@
             require-prior-idle-ms = <250>;
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
+            retro-tap;
         };
     };
 
