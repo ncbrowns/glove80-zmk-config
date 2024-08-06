@@ -96,22 +96,6 @@
             bindings = <&kp LSHIFT>, <&tog 5>;
         };
 
-        layer_sticky_tap_or_hold: layer_sticky_tap_or_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_STICKY_TAP_OR_HOLD";
-            bindings = <&mo>, <&sl>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-        };
-
-        sym_nav_lock: sym_nav_lock {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SYM_NAV_LOCK";
-            #binding-cells = <0>;
-            bindings = <&layer_sticky_tap_or_hold 3 4>, <&tog 3>;
-        };
-
         caps_word_hold_tap: caps_word_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "CAPS_WORD_HOLD_TAP";
@@ -249,6 +233,13 @@
             label = "ESC_SYM";
             #binding-cells = <0>;
             bindings = <&lt 4 ESC>, <&tog 4>;
+        };
+
+        td_nav: td_nav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NAV";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&tog 3>;
         };
     };
 
@@ -388,7 +379,7 @@
 &kp EQUAL    &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                                                             &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
 &kp TAB      &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                                                              &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp ESC      &kp A     &kp S    &kp D     &kp F      &kp G                                                                                                                              &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&shift_caps  &kp Z     &kp X    &kp C     &kp V      &kp B   &esc_sym                     &kp LCTRL              &kp LWIN  &kp RWIN  &kp RCTRL                &mo 3                     &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &shift_caps
+&shift_caps  &kp Z     &kp X    &kp C     &kp V      &kp B   &esc_sym                     &kp LCTRL              &kp LWIN  &kp RWIN  &kp RCTRL                &td_nav                   &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &shift_caps
 &magic 7 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &thumb_mods LSHFT BACKSPACE  &thumb_mods LCTRL DEL  &kp LALT  &kp RALT  &thumb_mods RCTRL ENTER  &thumb_mods RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
             >;
         };
