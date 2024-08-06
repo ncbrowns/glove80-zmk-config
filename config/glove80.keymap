@@ -93,7 +93,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&tog 5>;
+            bindings = <&kp LSHIFT>, <&tog 6>;
         };
 
         caps_word_hold_tap: caps_word_hold_tap {
@@ -306,7 +306,7 @@
         caps_word_exit: caps_word_exit {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 5>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 6>;
             label = "CAPS_WORD_EXIT";
         };
 
@@ -315,12 +315,12 @@
             #binding-cells = <2>;
             bindings =
                 <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 6>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 7>,
                 <&macro_tap>,
                 <&macro_param_2to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 6>;
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 7>;
 
             label = "TAB_SWITCH";
         };
@@ -368,7 +368,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        FunctionLayer {
+            bindings = <&mo 5>;
+            key-positions = <52 57>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -380,7 +387,7 @@
 &kp TAB      &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                                                              &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp ESC      &kp A     &kp S    &kp D     &kp F      &kp G                                                                                                                              &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
 &shift_caps  &kp Z     &kp X    &kp C     &kp V      &kp B   &esc_sym                     &kp LCTRL              &kp LWIN  &kp RWIN  &kp RCTRL                &td_nav                   &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &shift_caps
-&magic 7 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &thumb_mods LSHFT BACKSPACE  &thumb_mods LCTRL DEL  &kp LALT  &kp RALT  &thumb_mods RCTRL ENTER  &thumb_mods RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
+&magic 8 0   &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &thumb_mods LSHFT BACKSPACE  &thumb_mods LCTRL DEL  &kp LALT  &kp RALT  &thumb_mods RCTRL ENTER  &thumb_mods RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp INSERT
             >;
         };
 
@@ -428,13 +435,24 @@
             >;
         };
 
+        FunctionKeys {
+            bindings = <
+&trans  &trans    &trans    &trans     &trans                                                                     &trans  &trans   &trans   &trans   &trans
+&trans  &trans    &trans    &trans     &trans     &trans                                                  &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans    &trans    &trans     &trans     &trans                                                  &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans
+&trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                                                  &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&trans  &trans    &trans    &trans     &trans             &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans   &trans   &trans   &trans
+            >;
+        };
+
         CapsWord {
             bindings = <
 &caps_word_exit F1      &caps_word_exit F2    &caps_word_exit F3           &caps_word_exit F4    &caps_word_exit F5                                                                                                                    &caps_word_exit F6        &caps_word_exit F7     &caps_word_exit F8            &caps_word_exit F9             &caps_word_exit F10
 &caps_word_exit EQUAL   &kp N1                &kp N2                       &kp N3                &kp N4                 &kp N5                                                                                              &kp N6     &kp N7                    &kp N8                 &kp N9                        &kp N0                         &caps_word_hold_tap MINUS LS(MINUS)
 &caps_word_exit TAB     &kp LS(Q)             &kp LS(W)                    &kp LS(E)             &kp LS(R)              &kp LS(T)                                                                                           &kp LS(Y)  &kp LS(U)                 &kp LS(I)              &kp LS(O)                     &kp LS(P)                      &caps_word_exit BACKSLASH
 &caps_word_exit ESCAPE  &kp LS(A)             &caps_word_hold_tap S LS(S)  &kp LS(D)             &kp LS(F)              &kp LS(G)                                                                                           &kp LS(H)  &kp LS(J)                 &kp LS(K)              &kp LS(L)                     &caps_word_exit SEMI           &caps_word_exit SQT
-&trans                  &kp LS(Z)             &kp LS(X)                    &kp LS(C)             &kp LS(V)              &kp LS(B)  &tog 5  &trans               &trans  &trans  &trans               &tog 5                 &kp LS(N)  &kp LS(M)                 &caps_word_exit COMMA  &caps_word_exit PERIOD        &caps_word_exit SLASH          &trans
+&trans                  &kp LS(Z)             &kp LS(X)                    &kp LS(C)             &kp LS(V)              &kp LS(B)  &tog 6  &trans               &trans  &trans  &trans               &tog 6                 &kp LS(N)  &kp LS(M)                 &caps_word_exit COMMA  &caps_word_exit PERIOD        &caps_word_exit SLASH          &trans
 &trans                  &caps_word_exit HOME  &caps_word_exit END          &caps_word_exit LEFT  &caps_word_exit RIGHT             &trans  &caps_word_exit DEL  &trans  &trans  &caps_word_exit RET  &caps_word_exit SPACE             &caps_word_exit UP_ARROW  &caps_word_exit DOWN   &caps_word_exit LEFT_BRACKET  &caps_word_exit RIGHT_BRACKET  &caps_word_exit INS
             >;
         };
