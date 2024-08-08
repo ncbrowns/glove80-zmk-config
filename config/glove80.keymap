@@ -239,7 +239,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_NAV";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&flash_toggle_layer 3>;
+            bindings = <&lt 3 TAB>, <&flash_toggle_layer 3>;
         };
     };
 
