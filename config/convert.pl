@@ -5,7 +5,7 @@ use File::Copy;
 
 open IN, "<engrammer.keymap" or die;
 open OUT, ">glove80.km1" or die;
-print OUT '#define ZMK_MACRO(a,...) a : a { compatible = "zmk,behavior-macro"; xxxbinding-cells = <0>; __VA_ARGS__ }', "\n";
+print OUT '#define ZMK_MACRO(a,...) a: a { compatible = "zmk,behavior-macro"; xxxbinding-cells = <0>; __VA_ARGS__ };', "\n";
 while (<IN>) {
     s/#include/xxxinclude/g;
     s/#bind/xxxbind/g;
