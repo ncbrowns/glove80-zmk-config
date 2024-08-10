@@ -1791,7 +1791,7 @@ macros {
 
 
 
-    linux_magic_sysrq : linux_magic_sysrq { compatible = "zmk,behavior-macro"; wait-ms = <0>; tap-ms = <0>; bindings = <&macro_press &mo 0 &kp RALT> , <&macro_tap &kp PRINTSCREEN> , <&macro_pause_for_release> , <&macro_release &mo 0 &kp RALT> ; }
+    linux_magic_sysrq : linux_magic_sysrq { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <0>; tap-ms = <0>; bindings = <&macro_press &mo 0 &kp RALT> , <&macro_tap &kp PRINTSCREEN> , <&macro_pause_for_release> , <&macro_release &mo 0 &kp RALT> ; }
     mod_tab: mod_tab_switcher {
         compatible = "zmk,behavior-macro-one-param";
         wait-ms = <0>;
@@ -1823,56 +1823,56 @@ macros {
             , <&macro_release &mo MACRO_PLACEHOLDER>
             ;
     };
-    select_none : select_none { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>; }
+    select_none : select_none { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>; }
     select_word: select_word {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&select_word_right>, <&select_word_left>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    select_word_right : select_word_right { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>; }
+    select_word_right : select_word_right { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>; }
 
 
 
 
-    select_word_left : select_word_left { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>; }
+    select_word_left : select_word_left { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>; }
     extend_word: extend_word {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&extend_word_right>, <&extend_word_left>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    extend_word_right : extend_word_right { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(LS(RIGHT))>; }
+    extend_word_right : extend_word_right { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(LS(RIGHT))>; }
 
 
 
 
-    extend_word_left : extend_word_left { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(LS(LEFT))>; }
+    extend_word_left : extend_word_left { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LC(LS(LEFT))>; }
     select_line: select_line {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&select_line_right>, <&select_line_left>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    select_line_right : select_line_right { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp HOME &kp LS(END)>; }
+    select_line_right : select_line_right { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp HOME &kp LS(END)>; }
 
 
 
 
-    select_line_left : select_line_left { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp END &kp LS(HOME)>; }
+    select_line_left : select_line_left { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp END &kp LS(HOME)>; }
     extend_line: extend_line {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&extend_line_right>, <&extend_line_left>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    extend_line_right : extend_line_right { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LS(DOWN) &kp LS(END)>; }
+    extend_line_right : extend_line_right { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LS(DOWN) &kp LS(END)>; }
 
 
 
 
-    extend_line_left : extend_line_left { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LS(UP) &kp LS(HOME)>; }
-    world_degree_sign_macro : world_degree_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp O &kp O>; }
+    extend_line_left : extend_line_left { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&kp LS(UP) &kp LS(HOME)>; }
+    world_degree_sign_macro : world_degree_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp O &kp O>; }
     world_degree_sign: world_degree_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1885,7 +1885,7 @@ MOD_RALT
 
 ))>;
     };
-    world_section_sign_macro : world_section_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp S &kp O>; }
+    world_section_sign_macro : world_section_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp S &kp O>; }
     world_section_sign: world_section_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1898,7 +1898,7 @@ MOD_RALT
 
 ))>;
     };
-    world_paragraph_sign_macro : world_paragraph_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp P &kp LS(N1)>; }
+    world_paragraph_sign_macro : world_paragraph_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp P &kp LS(N1)>; }
     world_paragraph_sign: world_paragraph_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1911,7 +1911,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_ordinal_macro : world_o_ordinal_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(MINUS) &kp O>; }
+    world_o_ordinal_macro : world_o_ordinal_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(MINUS) &kp O>; }
     world_o_ordinal: world_o_ordinal {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1924,7 +1924,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_ordinal_macro : world_a_ordinal_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(MINUS) &kp A>; }
+    world_a_ordinal_macro : world_a_ordinal_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(MINUS) &kp A>; }
     world_a_ordinal: world_a_ordinal {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1937,7 +1937,7 @@ MOD_RALT
 
 ))>;
     };
-    world_exclaim_left_macro : world_exclaim_left_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N1 &kp ENTER>; }
+    world_exclaim_left_macro : world_exclaim_left_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N1 &kp ENTER>; }
     world_exclaim_left: world_exclaim_left {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1950,7 +1950,7 @@ MOD_RALT
 
 ))>;
     };
-    world_question_left_macro : world_question_left_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N1) &kp LS(N1)>; }
+    world_question_left_macro : world_question_left_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N1) &kp LS(N1)>; }
     world_question_left: world_question_left {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1963,7 +1963,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_crypto_macro : world_currency_crypto_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp B &kp F &kp ENTER>; }
+    world_currency_crypto_macro : world_currency_crypto_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp B &kp F &kp ENTER>; }
     world_currency_crypto: world_currency_crypto {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1976,7 +1976,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_cent_macro : world_currency_cent_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N2 &kp ENTER>; }
+    world_currency_cent_macro : world_currency_cent_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N2 &kp ENTER>; }
     world_currency_cent: world_currency_cent {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -1989,7 +1989,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_sign_macro : world_currency_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N4 &kp ENTER>; }
+    world_currency_sign_macro : world_currency_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N4 &kp ENTER>; }
     world_currency_sign: world_currency_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2002,7 +2002,7 @@ MOD_RALT
 
 ))>;
     };
-    world_micro_sign_macro : world_micro_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp M &kp U>; }
+    world_micro_sign_macro : world_micro_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp M &kp U>; }
     world_micro_sign: world_micro_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2019,7 +2019,7 @@ MOD_RALT
 
 
 
-    world_i_acute_lower_macro : world_i_acute_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp I>; }
+    world_i_acute_lower_macro : world_i_acute_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp I>; }
     world_i_acute_lower: world_i_acute_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2032,7 +2032,7 @@ MOD_RALT
 
 ))>;
     };
-    world_i_acute_upper_macro : world_i_acute_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(I)>; }
+    world_i_acute_upper_macro : world_i_acute_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(I)>; }
     world_i_acute_upper: world_i_acute_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2051,7 +2051,7 @@ MOD_RALT
         bindings = <&world_i_acute_lower>, <&world_i_acute_upper>;
         mods = <MOD_LSFT>;
     };
-    world_i_diaeresis_lower_macro : world_i_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp I>; }
+    world_i_diaeresis_lower_macro : world_i_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp I>; }
     world_i_diaeresis_lower: world_i_diaeresis_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2064,7 +2064,7 @@ MOD_RALT
 
 ))>;
     };
-    world_i_diaeresis_upper_macro : world_i_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(I)>; }
+    world_i_diaeresis_upper_macro : world_i_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(I)>; }
     world_i_diaeresis_upper: world_i_diaeresis_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2083,7 +2083,7 @@ MOD_RALT
         bindings = <&world_i_diaeresis_lower>, <&world_i_diaeresis_upper>;
         mods = <MOD_LSFT>;
     };
-    world_i_circumflex_lower_macro : world_i_circumflex_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp I>; }
+    world_i_circumflex_lower_macro : world_i_circumflex_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp I>; }
     world_i_circumflex_lower: world_i_circumflex_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2096,7 +2096,7 @@ MOD_RALT
 
 ))>;
     };
-    world_i_circumflex_upper_macro : world_i_circumflex_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(I)>; }
+    world_i_circumflex_upper_macro : world_i_circumflex_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(I)>; }
     world_i_circumflex_upper: world_i_circumflex_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2115,7 +2115,7 @@ MOD_RALT
         bindings = <&world_i_circumflex_lower>, <&world_i_circumflex_upper>;
         mods = <MOD_LSFT>;
     };
-    world_i_grave_lower_macro : world_i_grave_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp I>; }
+    world_i_grave_lower_macro : world_i_grave_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp I>; }
     world_i_grave_lower: world_i_grave_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2128,7 +2128,7 @@ MOD_RALT
 
 ))>;
     };
-    world_i_grave_upper_macro : world_i_grave_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(I)>; }
+    world_i_grave_upper_macro : world_i_grave_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(I)>; }
     world_i_grave_upper: world_i_grave_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2147,7 +2147,7 @@ MOD_RALT
         bindings = <&world_i_grave_lower>, <&world_i_grave_upper>;
         mods = <MOD_LSFT>;
     };
-    world_e_acute_lower_macro : world_e_acute_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp E>; }
+    world_e_acute_lower_macro : world_e_acute_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp E>; }
     world_e_acute_lower: world_e_acute_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2160,7 +2160,7 @@ MOD_RALT
 
 ))>;
     };
-    world_e_acute_upper_macro : world_e_acute_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(E)>; }
+    world_e_acute_upper_macro : world_e_acute_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(E)>; }
     world_e_acute_upper: world_e_acute_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2179,7 +2179,7 @@ MOD_RALT
         bindings = <&world_e_acute_lower>, <&world_e_acute_upper>;
         mods = <MOD_LSFT>;
     };
-    world_e_diaeresis_lower_macro : world_e_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp E>; }
+    world_e_diaeresis_lower_macro : world_e_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp E>; }
     world_e_diaeresis_lower: world_e_diaeresis_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2192,7 +2192,7 @@ MOD_RALT
 
 ))>;
     };
-    world_e_diaeresis_upper_macro : world_e_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(E)>; }
+    world_e_diaeresis_upper_macro : world_e_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(E)>; }
     world_e_diaeresis_upper: world_e_diaeresis_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2211,7 +2211,7 @@ MOD_RALT
         bindings = <&world_e_diaeresis_lower>, <&world_e_diaeresis_upper>;
         mods = <MOD_LSFT>;
     };
-    world_e_circumflex_lower_macro : world_e_circumflex_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp E>; }
+    world_e_circumflex_lower_macro : world_e_circumflex_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp E>; }
     world_e_circumflex_lower: world_e_circumflex_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2224,7 +2224,7 @@ MOD_RALT
 
 ))>;
     };
-    world_e_circumflex_upper_macro : world_e_circumflex_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(E)>; }
+    world_e_circumflex_upper_macro : world_e_circumflex_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(E)>; }
     world_e_circumflex_upper: world_e_circumflex_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2243,7 +2243,7 @@ MOD_RALT
         bindings = <&world_e_circumflex_lower>, <&world_e_circumflex_upper>;
         mods = <MOD_LSFT>;
     };
-    world_e_grave_lower_macro : world_e_grave_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp E>; }
+    world_e_grave_lower_macro : world_e_grave_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp E>; }
     world_e_grave_lower: world_e_grave_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2256,7 +2256,7 @@ MOD_RALT
 
 ))>;
     };
-    world_e_grave_upper_macro : world_e_grave_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(E)>; }
+    world_e_grave_upper_macro : world_e_grave_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(E)>; }
     world_e_grave_upper: world_e_grave_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2275,7 +2275,7 @@ MOD_RALT
         bindings = <&world_e_grave_lower>, <&world_e_grave_upper>;
         mods = <MOD_LSFT>;
     };
-    world_e_ae_lower_macro : world_e_ae_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp A &kp E>; }
+    world_e_ae_lower_macro : world_e_ae_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp A &kp E>; }
     world_e_ae_lower: world_e_ae_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2288,7 +2288,7 @@ MOD_RALT
 
 ))>;
     };
-    world_e_ae_upper_macro : world_e_ae_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(A) &kp LS(E)>; }
+    world_e_ae_upper_macro : world_e_ae_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(A) &kp LS(E)>; }
     world_e_ae_upper: world_e_ae_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2307,7 +2307,7 @@ MOD_RALT
         bindings = <&world_e_ae_lower>, <&world_e_ae_upper>;
         mods = <MOD_LSFT>;
     };
-    world_a_acute_lower_macro : world_a_acute_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp A>; }
+    world_a_acute_lower_macro : world_a_acute_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp A>; }
     world_a_acute_lower: world_a_acute_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2320,7 +2320,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_acute_upper_macro : world_a_acute_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(A)>; }
+    world_a_acute_upper_macro : world_a_acute_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(A)>; }
     world_a_acute_upper: world_a_acute_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2339,7 +2339,7 @@ MOD_RALT
         bindings = <&world_a_acute_lower>, <&world_a_acute_upper>;
         mods = <MOD_LSFT>;
     };
-    world_a_diaeresis_lower_macro : world_a_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp A>; }
+    world_a_diaeresis_lower_macro : world_a_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp A>; }
     world_a_diaeresis_lower: world_a_diaeresis_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2352,7 +2352,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_diaeresis_upper_macro : world_a_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(A)>; }
+    world_a_diaeresis_upper_macro : world_a_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(A)>; }
     world_a_diaeresis_upper: world_a_diaeresis_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2371,7 +2371,7 @@ MOD_RALT
         bindings = <&world_a_diaeresis_lower>, <&world_a_diaeresis_upper>;
         mods = <MOD_LSFT>;
     };
-    world_a_circumflex_lower_macro : world_a_circumflex_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp A>; }
+    world_a_circumflex_lower_macro : world_a_circumflex_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp A>; }
     world_a_circumflex_lower: world_a_circumflex_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2384,7 +2384,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_circumflex_upper_macro : world_a_circumflex_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(A)>; }
+    world_a_circumflex_upper_macro : world_a_circumflex_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(A)>; }
     world_a_circumflex_upper: world_a_circumflex_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2403,7 +2403,7 @@ MOD_RALT
         bindings = <&world_a_circumflex_lower>, <&world_a_circumflex_upper>;
         mods = <MOD_LSFT>;
     };
-    world_a_grave_lower_macro : world_a_grave_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp A>; }
+    world_a_grave_lower_macro : world_a_grave_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp A>; }
     world_a_grave_lower: world_a_grave_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2416,7 +2416,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_grave_upper_macro : world_a_grave_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(A)>; }
+    world_a_grave_upper_macro : world_a_grave_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(A)>; }
     world_a_grave_upper: world_a_grave_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2435,7 +2435,7 @@ MOD_RALT
         bindings = <&world_a_grave_lower>, <&world_a_grave_upper>;
         mods = <MOD_LSFT>;
     };
-    world_a_tilde_lower_macro : world_a_tilde_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp A>; }
+    world_a_tilde_lower_macro : world_a_tilde_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp A>; }
     world_a_tilde_lower: world_a_tilde_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2448,7 +2448,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_tilde_upper_macro : world_a_tilde_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp LS(A)>; }
+    world_a_tilde_upper_macro : world_a_tilde_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp LS(A)>; }
     world_a_tilde_upper: world_a_tilde_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2467,7 +2467,7 @@ MOD_RALT
         bindings = <&world_a_tilde_lower>, <&world_a_tilde_upper>;
         mods = <MOD_LSFT>;
     };
-    world_a_ring_lower_macro : world_a_ring_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp O &kp A>; }
+    world_a_ring_lower_macro : world_a_ring_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp O &kp A>; }
     world_a_ring_lower: world_a_ring_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2480,7 +2480,7 @@ MOD_RALT
 
 ))>;
     };
-    world_a_ring_upper_macro : world_a_ring_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp O &kp LS(A)>; }
+    world_a_ring_upper_macro : world_a_ring_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp O &kp LS(A)>; }
     world_a_ring_upper: world_a_ring_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2499,7 +2499,7 @@ MOD_RALT
         bindings = <&world_a_ring_lower>, <&world_a_ring_upper>;
         mods = <MOD_LSFT>;
     };
-    world_y_acute_lower_macro : world_y_acute_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp Y>; }
+    world_y_acute_lower_macro : world_y_acute_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp Y>; }
     world_y_acute_lower: world_y_acute_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2512,7 +2512,7 @@ MOD_RALT
 
 ))>;
     };
-    world_y_acute_upper_macro : world_y_acute_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(Y)>; }
+    world_y_acute_upper_macro : world_y_acute_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(Y)>; }
     world_y_acute_upper: world_y_acute_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2531,7 +2531,7 @@ MOD_RALT
         bindings = <&world_y_acute_lower>, <&world_y_acute_upper>;
         mods = <MOD_LSFT>;
     };
-    world_y_diaeresis_lower_macro : world_y_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp Y>; }
+    world_y_diaeresis_lower_macro : world_y_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp Y>; }
     world_y_diaeresis_lower: world_y_diaeresis_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2544,7 +2544,7 @@ MOD_RALT
 
 ))>;
     };
-    world_y_diaeresis_upper_macro : world_y_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(Y)>; }
+    world_y_diaeresis_upper_macro : world_y_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(Y)>; }
     world_y_diaeresis_upper: world_y_diaeresis_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2563,7 +2563,7 @@ MOD_RALT
         bindings = <&world_y_diaeresis_lower>, <&world_y_diaeresis_upper>;
         mods = <MOD_LSFT>;
     };
-    world_o_acute_lower_macro : world_o_acute_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp O>; }
+    world_o_acute_lower_macro : world_o_acute_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp O>; }
     world_o_acute_lower: world_o_acute_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2576,7 +2576,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_acute_upper_macro : world_o_acute_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(O)>; }
+    world_o_acute_upper_macro : world_o_acute_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(O)>; }
     world_o_acute_upper: world_o_acute_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2595,7 +2595,7 @@ MOD_RALT
         bindings = <&world_o_acute_lower>, <&world_o_acute_upper>;
         mods = <MOD_LSFT>;
     };
-    world_o_diaeresis_lower_macro : world_o_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp O>; }
+    world_o_diaeresis_lower_macro : world_o_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp O>; }
     world_o_diaeresis_lower: world_o_diaeresis_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2608,7 +2608,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_diaeresis_upper_macro : world_o_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(O)>; }
+    world_o_diaeresis_upper_macro : world_o_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(O)>; }
     world_o_diaeresis_upper: world_o_diaeresis_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2627,7 +2627,7 @@ MOD_RALT
         bindings = <&world_o_diaeresis_lower>, <&world_o_diaeresis_upper>;
         mods = <MOD_LSFT>;
     };
-    world_o_circumflex_lower_macro : world_o_circumflex_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp O>; }
+    world_o_circumflex_lower_macro : world_o_circumflex_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp O>; }
     world_o_circumflex_lower: world_o_circumflex_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2640,7 +2640,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_circumflex_upper_macro : world_o_circumflex_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(O)>; }
+    world_o_circumflex_upper_macro : world_o_circumflex_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(O)>; }
     world_o_circumflex_upper: world_o_circumflex_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2659,7 +2659,7 @@ MOD_RALT
         bindings = <&world_o_circumflex_lower>, <&world_o_circumflex_upper>;
         mods = <MOD_LSFT>;
     };
-    world_o_grave_lower_macro : world_o_grave_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp O>; }
+    world_o_grave_lower_macro : world_o_grave_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp O>; }
     world_o_grave_lower: world_o_grave_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2672,7 +2672,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_grave_upper_macro : world_o_grave_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(O)>; }
+    world_o_grave_upper_macro : world_o_grave_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(O)>; }
     world_o_grave_upper: world_o_grave_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2691,7 +2691,7 @@ MOD_RALT
         bindings = <&world_o_grave_lower>, <&world_o_grave_upper>;
         mods = <MOD_LSFT>;
     };
-    world_o_tilde_lower_macro : world_o_tilde_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp O>; }
+    world_o_tilde_lower_macro : world_o_tilde_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp O>; }
     world_o_tilde_lower: world_o_tilde_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2704,7 +2704,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_tilde_upper_macro : world_o_tilde_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp LS(O)>; }
+    world_o_tilde_upper_macro : world_o_tilde_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp LS(O)>; }
     world_o_tilde_upper: world_o_tilde_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2723,7 +2723,7 @@ MOD_RALT
         bindings = <&world_o_tilde_lower>, <&world_o_tilde_upper>;
         mods = <MOD_LSFT>;
     };
-    world_o_slash_lower_macro : world_o_slash_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp FSLH &kp O>; }
+    world_o_slash_lower_macro : world_o_slash_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp FSLH &kp O>; }
     world_o_slash_lower: world_o_slash_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2736,7 +2736,7 @@ MOD_RALT
 
 ))>;
     };
-    world_o_slash_upper_macro : world_o_slash_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp FSLH &kp LS(O)>; }
+    world_o_slash_upper_macro : world_o_slash_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp FSLH &kp LS(O)>; }
     world_o_slash_upper: world_o_slash_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2755,7 +2755,7 @@ MOD_RALT
         bindings = <&world_o_slash_lower>, <&world_o_slash_upper>;
         mods = <MOD_LSFT>;
     };
-    world_u_acute_lower_macro : world_u_acute_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp U>; }
+    world_u_acute_lower_macro : world_u_acute_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp U>; }
     world_u_acute_lower: world_u_acute_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2768,7 +2768,7 @@ MOD_RALT
 
 ))>;
     };
-    world_u_acute_upper_macro : world_u_acute_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(U)>; }
+    world_u_acute_upper_macro : world_u_acute_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp SQT &kp LS(U)>; }
     world_u_acute_upper: world_u_acute_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2787,7 +2787,7 @@ MOD_RALT
         bindings = <&world_u_acute_lower>, <&world_u_acute_upper>;
         mods = <MOD_LSFT>;
     };
-    world_u_diaeresis_lower_macro : world_u_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp U>; }
+    world_u_diaeresis_lower_macro : world_u_diaeresis_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp U>; }
     world_u_diaeresis_lower: world_u_diaeresis_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2800,7 +2800,7 @@ MOD_RALT
 
 ))>;
     };
-    world_u_diaeresis_upper_macro : world_u_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(U)>; }
+    world_u_diaeresis_upper_macro : world_u_diaeresis_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(SQT) &kp LS(U)>; }
     world_u_diaeresis_upper: world_u_diaeresis_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2819,7 +2819,7 @@ MOD_RALT
         bindings = <&world_u_diaeresis_lower>, <&world_u_diaeresis_upper>;
         mods = <MOD_LSFT>;
     };
-    world_u_circumflex_lower_macro : world_u_circumflex_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp U>; }
+    world_u_circumflex_lower_macro : world_u_circumflex_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp U>; }
     world_u_circumflex_lower: world_u_circumflex_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2832,7 +2832,7 @@ MOD_RALT
 
 ))>;
     };
-    world_u_circumflex_upper_macro : world_u_circumflex_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(U)>; }
+    world_u_circumflex_upper_macro : world_u_circumflex_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(N6) &kp LS(U)>; }
     world_u_circumflex_upper: world_u_circumflex_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2851,7 +2851,7 @@ MOD_RALT
         bindings = <&world_u_circumflex_lower>, <&world_u_circumflex_upper>;
         mods = <MOD_LSFT>;
     };
-    world_u_grave_lower_macro : world_u_grave_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp U>; }
+    world_u_grave_lower_macro : world_u_grave_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp U>; }
     world_u_grave_lower: world_u_grave_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2864,7 +2864,7 @@ MOD_RALT
 
 ))>;
     };
-    world_u_grave_upper_macro : world_u_grave_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(U)>; }
+    world_u_grave_upper_macro : world_u_grave_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp GRAVE &kp LS(U)>; }
     world_u_grave_upper: world_u_grave_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2883,7 +2883,7 @@ MOD_RALT
         bindings = <&world_u_grave_lower>, <&world_u_grave_upper>;
         mods = <MOD_LSFT>;
     };
-    world_consonants_cedilla_lower_macro : world_consonants_cedilla_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp COMMA &kp C>; }
+    world_consonants_cedilla_lower_macro : world_consonants_cedilla_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp COMMA &kp C>; }
     world_consonants_cedilla_lower: world_consonants_cedilla_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2896,7 +2896,7 @@ MOD_RALT
 
 ))>;
     };
-    world_consonants_cedilla_upper_macro : world_consonants_cedilla_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp COMMA &kp LS(C)>; }
+    world_consonants_cedilla_upper_macro : world_consonants_cedilla_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp COMMA &kp LS(C)>; }
     world_consonants_cedilla_upper: world_consonants_cedilla_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2915,7 +2915,7 @@ MOD_RALT
         bindings = <&world_consonants_cedilla_lower>, <&world_consonants_cedilla_upper>;
         mods = <MOD_LSFT>;
     };
-    world_consonants_eszett_lower_macro : world_consonants_eszett_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp S &kp S>; }
+    world_consonants_eszett_lower_macro : world_consonants_eszett_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp S &kp S>; }
     world_consonants_eszett_lower: world_consonants_eszett_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2928,7 +2928,7 @@ MOD_RALT
 
 ))>;
     };
-    world_consonants_eszett_upper_macro : world_consonants_eszett_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(S) &kp LS(S)>; }
+    world_consonants_eszett_upper_macro : world_consonants_eszett_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(S) &kp LS(S)>; }
     world_consonants_eszett_upper: world_consonants_eszett_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2947,7 +2947,7 @@ MOD_RALT
         bindings = <&world_consonants_eszett_lower>, <&world_consonants_eszett_upper>;
         mods = <MOD_LSFT>;
     };
-    world_consonants_ntilde_lower_macro : world_consonants_ntilde_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp N>; }
+    world_consonants_ntilde_lower_macro : world_consonants_ntilde_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp N>; }
     world_consonants_ntilde_lower: world_consonants_ntilde_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2960,7 +2960,7 @@ MOD_RALT
 
 ))>;
     };
-    world_consonants_ntilde_upper_macro : world_consonants_ntilde_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp LS(N)>; }
+    world_consonants_ntilde_upper_macro : world_consonants_ntilde_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp LS(GRAVE) &kp LS(N)>; }
     world_consonants_ntilde_upper: world_consonants_ntilde_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2979,7 +2979,7 @@ MOD_RALT
         bindings = <&world_consonants_ntilde_lower>, <&world_consonants_ntilde_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_left_angle_lower_macro : world_quotes_left_angle_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N3 &kp N9 &kp ENTER>; }
+    world_quotes_left_angle_lower_macro : world_quotes_left_angle_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N3 &kp N9 &kp ENTER>; }
     world_quotes_left_angle_lower: world_quotes_left_angle_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -2992,7 +2992,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_left_angle_upper_macro : world_quotes_left_angle_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp B &kp ENTER>; }
+    world_quotes_left_angle_upper_macro : world_quotes_left_angle_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp B &kp ENTER>; }
     world_quotes_left_angle_upper: world_quotes_left_angle_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3011,7 +3011,7 @@ MOD_RALT
         bindings = <&world_quotes_left_angle_lower>, <&world_quotes_left_angle_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_left_curly_lower_macro : world_quotes_left_curly_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N8 &kp ENTER>; }
+    world_quotes_left_curly_lower_macro : world_quotes_left_curly_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N8 &kp ENTER>; }
     world_quotes_left_curly_lower: world_quotes_left_curly_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3024,7 +3024,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_left_curly_upper_macro : world_quotes_left_curly_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp C &kp ENTER>; }
+    world_quotes_left_curly_upper_macro : world_quotes_left_curly_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp C &kp ENTER>; }
     world_quotes_left_curly_upper: world_quotes_left_curly_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3043,7 +3043,7 @@ MOD_RALT
         bindings = <&world_quotes_left_curly_lower>, <&world_quotes_left_curly_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_left_low_lower_macro : world_quotes_left_low_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp A &kp ENTER>; }
+    world_quotes_left_low_lower_macro : world_quotes_left_low_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp A &kp ENTER>; }
     world_quotes_left_low_lower: world_quotes_left_low_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3056,7 +3056,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_left_low_upper_macro : world_quotes_left_low_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp E &kp ENTER>; }
+    world_quotes_left_low_upper_macro : world_quotes_left_low_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp E &kp ENTER>; }
     world_quotes_left_low_upper: world_quotes_left_low_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3075,7 +3075,7 @@ MOD_RALT
         bindings = <&world_quotes_left_low_lower>, <&world_quotes_left_low_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_left_corner1_lower_macro : world_quotes_left_corner1_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp C &kp ENTER>; }
+    world_quotes_left_corner1_lower_macro : world_quotes_left_corner1_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp C &kp ENTER>; }
     world_quotes_left_corner1_lower: world_quotes_left_corner1_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3088,7 +3088,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_left_corner1_upper_macro : world_quotes_left_corner1_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N1 &kp ENTER>; }
+    world_quotes_left_corner1_upper_macro : world_quotes_left_corner1_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N1 &kp ENTER>; }
     world_quotes_left_corner1_upper: world_quotes_left_corner1_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3107,7 +3107,7 @@ MOD_RALT
         bindings = <&world_quotes_left_corner1_lower>, <&world_quotes_left_corner1_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_left_corner2_lower_macro : world_quotes_left_corner2_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp E &kp ENTER>; }
+    world_quotes_left_corner2_lower_macro : world_quotes_left_corner2_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp E &kp ENTER>; }
     world_quotes_left_corner2_lower: world_quotes_left_corner2_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3120,7 +3120,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_left_corner2_upper_macro : world_quotes_left_corner2_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N3 &kp ENTER>; }
+    world_quotes_left_corner2_upper_macro : world_quotes_left_corner2_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N3 &kp ENTER>; }
     world_quotes_left_corner2_upper: world_quotes_left_corner2_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3139,7 +3139,7 @@ MOD_RALT
         bindings = <&world_quotes_left_corner2_lower>, <&world_quotes_left_corner2_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_left_grave_macro : world_quotes_left_grave_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N6 &kp N0 &kp ENTER>; }
+    world_quotes_left_grave_macro : world_quotes_left_grave_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N6 &kp N0 &kp ENTER>; }
     world_quotes_left_grave: world_quotes_left_grave {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3152,7 +3152,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_right_angle_lower_macro : world_quotes_right_angle_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N3 &kp A &kp ENTER>; }
+    world_quotes_right_angle_lower_macro : world_quotes_right_angle_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N3 &kp A &kp ENTER>; }
     world_quotes_right_angle_lower: world_quotes_right_angle_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3165,7 +3165,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_right_angle_upper_macro : world_quotes_right_angle_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp B &kp B &kp ENTER>; }
+    world_quotes_right_angle_upper_macro : world_quotes_right_angle_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp B &kp B &kp ENTER>; }
     world_quotes_right_angle_upper: world_quotes_right_angle_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3184,7 +3184,7 @@ MOD_RALT
         bindings = <&world_quotes_right_angle_lower>, <&world_quotes_right_angle_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_right_curly_lower_macro : world_quotes_right_curly_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N9 &kp ENTER>; }
+    world_quotes_right_curly_lower_macro : world_quotes_right_curly_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N9 &kp ENTER>; }
     world_quotes_right_curly_lower: world_quotes_right_curly_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3197,7 +3197,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_right_curly_upper_macro : world_quotes_right_curly_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp D &kp ENTER>; }
+    world_quotes_right_curly_upper_macro : world_quotes_right_curly_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp D &kp ENTER>; }
     world_quotes_right_curly_upper: world_quotes_right_curly_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3222,7 +3222,7 @@ MOD_RALT
         bindings = <&world_quotes_left_low_lower>, <&world_quotes_left_low_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_right_corner1_lower_macro : world_quotes_right_corner1_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp D &kp ENTER>; }
+    world_quotes_right_corner1_lower_macro : world_quotes_right_corner1_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp D &kp ENTER>; }
     world_quotes_right_corner1_lower: world_quotes_right_corner1_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3235,7 +3235,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_right_corner1_upper_macro : world_quotes_right_corner1_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N2 &kp ENTER>; }
+    world_quotes_right_corner1_upper_macro : world_quotes_right_corner1_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N2 &kp ENTER>; }
     world_quotes_right_corner1_upper: world_quotes_right_corner1_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3254,7 +3254,7 @@ MOD_RALT
         bindings = <&world_quotes_right_corner1_lower>, <&world_quotes_right_corner1_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_right_corner2_lower_macro : world_quotes_right_corner2_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp F &kp ENTER>; }
+    world_quotes_right_corner2_lower_macro : world_quotes_right_corner2_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N3 &kp N0 &kp N0 &kp F &kp ENTER>; }
     world_quotes_right_corner2_lower: world_quotes_right_corner2_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3267,7 +3267,7 @@ MOD_RALT
 
 ))>;
     };
-    world_quotes_right_corner2_upper_macro : world_quotes_right_corner2_upper_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N4 &kp ENTER>; }
+    world_quotes_right_corner2_upper_macro : world_quotes_right_corner2_upper_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N4 &kp N4 &kp ENTER>; }
     world_quotes_right_corner2_upper: world_quotes_right_corner2_upper {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3286,7 +3286,7 @@ MOD_RALT
         bindings = <&world_quotes_right_corner2_lower>, <&world_quotes_right_corner2_upper>;
         mods = <MOD_LSFT>;
     };
-    world_quotes_right_grave_macro : world_quotes_right_grave_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp B &kp N4 &kp ENTER>; }
+    world_quotes_right_grave_macro : world_quotes_right_grave_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp B &kp N4 &kp ENTER>; }
     world_quotes_right_grave: world_quotes_right_grave {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3299,7 +3299,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_dollar_lower_macro : world_currency_dollar_lower_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N4 &kp ENTER>; }
+    world_currency_dollar_lower_macro : world_currency_dollar_lower_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N4 &kp ENTER>; }
     world_currency_dollar_lower: world_currency_dollar_lower {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3318,7 +3318,7 @@ MOD_RALT
         bindings = <&world_currency_dollar_lower>, <&world_currency_cent>;
         mods = <MOD_LSFT>;
     };
-    world_currency_yen_macro : world_currency_yen_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N5 &kp ENTER>; }
+    world_currency_yen_macro : world_currency_yen_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N5 &kp ENTER>; }
     world_currency_yen: world_currency_yen {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3331,7 +3331,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_euro_macro : world_currency_euro_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp E &kp EQUAL>; }
+    world_currency_euro_macro : world_currency_euro_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp RALT &kp E &kp EQUAL>; }
     world_currency_euro: world_currency_euro {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3344,7 +3344,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_won_macro : world_currency_won_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp A &kp N9 &kp ENTER>; }
+    world_currency_won_macro : world_currency_won_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp A &kp N9 &kp ENTER>; }
     world_currency_won: world_currency_won {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3357,7 +3357,7 @@ MOD_RALT
 
 ))>;
     };
-    world_currency_pound_macro : world_currency_pound_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N3 &kp ENTER>; }
+    world_currency_pound_macro : world_currency_pound_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp A &kp N3 &kp ENTER>; }
     world_currency_pound: world_currency_pound {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3608,7 +3608,7 @@ MOD_RALT
         bindings = <&world_currency_pound>, <&world_currency_generic>;
         mods = <(MOD_RSFT)>;
     };
-    emoji_zwj_macro : emoji_zwj_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N0 &kp D &kp ENTER>; }
+    emoji_zwj_macro : emoji_zwj_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N0 &kp D &kp ENTER>; }
     emoji_zwj: emoji_zwj {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3621,7 +3621,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_male_sign_macro : emoji_male_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N4 &kp N2 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_male_sign_macro : emoji_male_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N4 &kp N2 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_male_sign: emoji_male_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3634,7 +3634,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_female_sign_macro : emoji_female_sign_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N4 &kp N0 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_female_sign_macro : emoji_female_sign_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N4 &kp N0 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_female_sign: emoji_female_sign {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3647,7 +3647,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_right_arrow_macro : emoji_right_arrow_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp A &kp N1 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_right_arrow_macro : emoji_right_arrow_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp A &kp N1 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_right_arrow: emoji_right_arrow {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3660,7 +3660,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_left_arrow_macro : emoji_left_arrow_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp B &kp N0 &kp N5 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_left_arrow_macro : emoji_left_arrow_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp B &kp N0 &kp N5 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_left_arrow: emoji_left_arrow {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3673,7 +3673,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_rainbow_macro : emoji_rainbow_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N8 &kp ENTER>; }
+    emoji_rainbow_macro : emoji_rainbow_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N8 &kp ENTER>; }
     emoji_rainbow: emoji_rainbow {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3686,7 +3686,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_cloudy_macro : emoji_cloudy_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N0 &kp N1 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_cloudy_macro : emoji_cloudy_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N0 &kp N1 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_cloudy: emoji_cloudy {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3699,7 +3699,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_mostly_cloudy_macro : emoji_mostly_cloudy_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N2 &kp N5 &kp ENTER>; }
+    emoji_mostly_cloudy_macro : emoji_mostly_cloudy_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N2 &kp N5 &kp ENTER>; }
     emoji_mostly_cloudy: emoji_mostly_cloudy {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3712,7 +3712,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_partly_cloudy_macro : emoji_partly_cloudy_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp C &kp N5 &kp ENTER>; }
+    emoji_partly_cloudy_macro : emoji_partly_cloudy_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp C &kp N5 &kp ENTER>; }
     emoji_partly_cloudy: emoji_partly_cloudy {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3725,7 +3725,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_mostly_sunny_macro : emoji_mostly_sunny_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N2 &kp N4 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_mostly_sunny_macro : emoji_mostly_sunny_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N2 &kp N4 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_mostly_sunny: emoji_mostly_sunny {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3738,7 +3738,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_sunny_macro : emoji_sunny_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N0 &kp N0 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_sunny_macro : emoji_sunny_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N0 &kp N0 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_sunny: emoji_sunny {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3751,7 +3751,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_sunrise_macro : emoji_sunrise_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N5 &kp ENTER>; }
+    emoji_sunrise_macro : emoji_sunrise_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N5 &kp ENTER>; }
     emoji_sunrise: emoji_sunrise {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3764,7 +3764,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_sunrise_mountains_macro : emoji_sunrise_mountains_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N4 &kp ENTER>; }
+    emoji_sunrise_mountains_macro : emoji_sunrise_mountains_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N4 &kp ENTER>; }
     emoji_sunrise_mountains: emoji_sunrise_mountains {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3777,7 +3777,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_cityscape_macro : emoji_cityscape_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp D &kp N9 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_cityscape_macro : emoji_cityscape_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp D &kp N9 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_cityscape: emoji_cityscape {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3790,7 +3790,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_cityscape_dusk_macro : emoji_cityscape_dusk_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N7 &kp ENTER>; }
+    emoji_cityscape_dusk_macro : emoji_cityscape_dusk_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N7 &kp ENTER>; }
     emoji_cityscape_dusk: emoji_cityscape_dusk {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3803,7 +3803,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_cityscape_night_macro : emoji_cityscape_night_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N3 &kp ENTER>; }
+    emoji_cityscape_night_macro : emoji_cityscape_night_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N0 &kp N3 &kp ENTER>; }
     emoji_cityscape_night: emoji_cityscape_night {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3816,7 +3816,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_light_skin_tone_macro : emoji_light_skin_tone_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp B &kp ENTER>; }
+    emoji_light_skin_tone_macro : emoji_light_skin_tone_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp B &kp ENTER>; }
     emoji_light_skin_tone: emoji_light_skin_tone {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3829,7 +3829,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_medium_light_skin_tone_macro : emoji_medium_light_skin_tone_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp C &kp ENTER>; }
+    emoji_medium_light_skin_tone_macro : emoji_medium_light_skin_tone_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp C &kp ENTER>; }
     emoji_medium_light_skin_tone: emoji_medium_light_skin_tone {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3842,7 +3842,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_medium_skin_tone_macro : emoji_medium_skin_tone_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp D &kp ENTER>; }
+    emoji_medium_skin_tone_macro : emoji_medium_skin_tone_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp D &kp ENTER>; }
     emoji_medium_skin_tone: emoji_medium_skin_tone {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3855,7 +3855,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_medium_dark_skin_tone_macro : emoji_medium_dark_skin_tone_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp E &kp ENTER>; }
+    emoji_medium_dark_skin_tone_macro : emoji_medium_dark_skin_tone_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp E &kp ENTER>; }
     emoji_medium_dark_skin_tone: emoji_medium_dark_skin_tone {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3868,7 +3868,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_dark_skin_tone_macro : emoji_dark_skin_tone_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp F &kp ENTER>; }
+    emoji_dark_skin_tone_macro : emoji_dark_skin_tone_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp F &kp F &kp ENTER>; }
     emoji_dark_skin_tone: emoji_dark_skin_tone {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3881,7 +3881,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_baby_bottle_macro : emoji_baby_bottle_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N7 &kp C &kp ENTER>; }
+    emoji_baby_bottle_macro : emoji_baby_bottle_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N7 &kp C &kp ENTER>; }
     emoji_baby_bottle: emoji_baby_bottle {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3894,7 +3894,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_baby_macro : emoji_baby_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N7 &kp N6 &kp ENTER>; }
+    emoji_baby_macro : emoji_baby_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N7 &kp N6 &kp ENTER>; }
     emoji_baby: emoji_baby {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3907,7 +3907,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_boy_macro : emoji_boy_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N6 &kp ENTER>; }
+    emoji_boy_macro : emoji_boy_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N6 &kp ENTER>; }
     emoji_boy: emoji_boy {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3920,7 +3920,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_girl_macro : emoji_girl_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N7 &kp ENTER>; }
+    emoji_girl_macro : emoji_girl_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N7 &kp ENTER>; }
     emoji_girl: emoji_girl {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3933,7 +3933,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_man_macro : emoji_man_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N8 &kp ENTER>; }
+    emoji_man_macro : emoji_man_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N8 &kp ENTER>; }
     emoji_man: emoji_man {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3946,7 +3946,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_woman_macro : emoji_woman_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N9 &kp ENTER>; }
+    emoji_woman_macro : emoji_woman_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N6 &kp N9 &kp ENTER>; }
     emoji_woman: emoji_woman {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3959,7 +3959,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_old_man_macro : emoji_old_man_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N7 &kp N4 &kp ENTER>; }
+    emoji_old_man_macro : emoji_old_man_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N7 &kp N4 &kp ENTER>; }
     emoji_old_man: emoji_old_man {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3972,7 +3972,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_old_woman_macro : emoji_old_woman_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N7 &kp N5 &kp ENTER>; }
+    emoji_old_woman_macro : emoji_old_woman_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N7 &kp N5 &kp ENTER>; }
     emoji_old_woman: emoji_old_woman {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3985,7 +3985,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_white_hair_macro : emoji_white_hair_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N3 &kp ENTER>; }
+    emoji_white_hair_macro : emoji_white_hair_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N3 &kp ENTER>; }
     emoji_white_hair: emoji_white_hair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -3998,7 +3998,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_curly_hair_macro : emoji_curly_hair_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N1 &kp ENTER>; }
+    emoji_curly_hair_macro : emoji_curly_hair_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N1 &kp ENTER>; }
     emoji_curly_hair: emoji_curly_hair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4011,7 +4011,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_red_hair_macro : emoji_red_hair_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N0 &kp ENTER>; }
+    emoji_red_hair_macro : emoji_red_hair_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N0 &kp ENTER>; }
     emoji_red_hair: emoji_red_hair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4024,7 +4024,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_bald_macro : emoji_bald_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N2 &kp ENTER>; }
+    emoji_bald_macro : emoji_bald_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp B &kp N2 &kp ENTER>; }
     emoji_bald: emoji_bald {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4037,7 +4037,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_new_moon_macro : emoji_new_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N1 &kp ENTER>; }
+    emoji_new_moon_macro : emoji_new_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N1 &kp ENTER>; }
     emoji_new_moon: emoji_new_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4050,7 +4050,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_waxing_crescent_moon_macro : emoji_waxing_crescent_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N2 &kp ENTER>; }
+    emoji_waxing_crescent_moon_macro : emoji_waxing_crescent_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N2 &kp ENTER>; }
     emoji_waxing_crescent_moon: emoji_waxing_crescent_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4063,7 +4063,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_first_quarter_moon_macro : emoji_first_quarter_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N3 &kp ENTER>; }
+    emoji_first_quarter_moon_macro : emoji_first_quarter_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N3 &kp ENTER>; }
     emoji_first_quarter_moon: emoji_first_quarter_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4076,7 +4076,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_waxing_gibbous_moon_macro : emoji_waxing_gibbous_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N4 &kp ENTER>; }
+    emoji_waxing_gibbous_moon_macro : emoji_waxing_gibbous_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N4 &kp ENTER>; }
     emoji_waxing_gibbous_moon: emoji_waxing_gibbous_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4089,7 +4089,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_full_moon_macro : emoji_full_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N5 &kp ENTER>; }
+    emoji_full_moon_macro : emoji_full_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N5 &kp ENTER>; }
     emoji_full_moon: emoji_full_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4102,7 +4102,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_waning_gibbous_moon_macro : emoji_waning_gibbous_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N6 &kp ENTER>; }
+    emoji_waning_gibbous_moon_macro : emoji_waning_gibbous_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N6 &kp ENTER>; }
     emoji_waning_gibbous_moon: emoji_waning_gibbous_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4115,7 +4115,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_last_quarter_moon_macro : emoji_last_quarter_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N7 &kp ENTER>; }
+    emoji_last_quarter_moon_macro : emoji_last_quarter_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N7 &kp ENTER>; }
     emoji_last_quarter_moon: emoji_last_quarter_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4128,7 +4128,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_waning_crescent_moon_macro : emoji_waning_crescent_moon_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N8 &kp ENTER>; }
+    emoji_waning_crescent_moon_macro : emoji_waning_crescent_moon_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N1 &kp N8 &kp ENTER>; }
     emoji_waning_crescent_moon: emoji_waning_crescent_moon {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4141,7 +4141,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_tada_macro : emoji_tada_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N8 &kp N9 &kp ENTER>; }
+    emoji_tada_macro : emoji_tada_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N3 &kp N8 &kp N9 &kp ENTER>; }
     emoji_tada: emoji_tada {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4154,7 +4154,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_heart_macro : emoji_heart_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N6 &kp N4 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_heart_macro : emoji_heart_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N6 &kp N4 &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_heart: emoji_heart {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4167,7 +4167,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_fire_macro : emoji_fire_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N5 &kp N2 &kp N5 &kp ENTER>; }
+    emoji_fire_macro : emoji_fire_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N5 &kp N2 &kp N5 &kp ENTER>; }
     emoji_fire: emoji_fire {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4180,7 +4180,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_muscle_macro : emoji_muscle_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp A &kp A &kp ENTER>; }
+    emoji_muscle_macro : emoji_muscle_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp A &kp A &kp ENTER>; }
     emoji_muscle: emoji_muscle {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4193,7 +4193,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_climbing_macro : emoji_person_climbing_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp D &kp N7 &kp ENTER>; }
+    emoji_person_climbing_macro : emoji_person_climbing_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp D &kp N7 &kp ENTER>; }
     emoji_person_climbing: emoji_person_climbing {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4206,7 +4206,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_lab_coat_macro : emoji_lab_coat_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N7 &kp C &kp ENTER>; }
+    emoji_lab_coat_macro : emoji_lab_coat_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N7 &kp C &kp ENTER>; }
     emoji_lab_coat: emoji_lab_coat {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4219,7 +4219,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_rocket_macro : emoji_rocket_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N8 &kp N0 &kp ENTER>; }
+    emoji_rocket_macro : emoji_rocket_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N8 &kp N0 &kp ENTER>; }
     emoji_rocket: emoji_rocket {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4232,7 +4232,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_joy_macro : emoji_joy_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp N2 &kp ENTER>; }
+    emoji_joy_macro : emoji_joy_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp N2 &kp ENTER>; }
     emoji_joy: emoji_joy {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4245,7 +4245,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_rofl_macro : emoji_rofl_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N2 &kp N3 &kp ENTER>; }
+    emoji_rofl_macro : emoji_rofl_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N2 &kp N3 &kp ENTER>; }
     emoji_rofl: emoji_rofl {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4258,7 +4258,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_star_struck_macro : emoji_star_struck_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N2 &kp N9 &kp ENTER>; }
+    emoji_star_struck_macro : emoji_star_struck_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N2 &kp N9 &kp ENTER>; }
     emoji_star_struck: emoji_star_struck {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4271,7 +4271,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_love_struck_macro : emoji_love_struck_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp D &kp ENTER>; }
+    emoji_love_struck_macro : emoji_love_struck_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp D &kp ENTER>; }
     emoji_love_struck: emoji_love_struck {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4284,7 +4284,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_saluting_face_macro : emoji_saluting_face_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp E &kp N1 &kp ENTER>; }
+    emoji_saluting_face_macro : emoji_saluting_face_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp E &kp N1 &kp ENTER>; }
     emoji_saluting_face: emoji_saluting_face {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4297,7 +4297,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_shocked_face_macro : emoji_shocked_face_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N2 &kp F &kp ENTER>; }
+    emoji_shocked_face_macro : emoji_shocked_face_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N2 &kp F &kp ENTER>; }
     emoji_shocked_face: emoji_shocked_face {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4310,7 +4310,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_cold_sweat_macro : emoji_cold_sweat_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N3 &kp N0 &kp ENTER>; }
+    emoji_cold_sweat_macro : emoji_cold_sweat_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N3 &kp N0 &kp ENTER>; }
     emoji_cold_sweat: emoji_cold_sweat {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4323,7 +4323,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_monocle_face_macro : emoji_monocle_face_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp D &kp N0 &kp ENTER>; }
+    emoji_monocle_face_macro : emoji_monocle_face_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp D &kp N0 &kp ENTER>; }
     emoji_monocle_face: emoji_monocle_face {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4336,7 +4336,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_snap_fingers_macro : emoji_snap_fingers_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp F &kp N0 &kp ENTER>; }
+    emoji_snap_fingers_macro : emoji_snap_fingers_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp F &kp N0 &kp ENTER>; }
     emoji_snap_fingers: emoji_snap_fingers {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4349,7 +4349,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_ok_hand_macro : emoji_ok_hand_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp C &kp ENTER>; }
+    emoji_ok_hand_macro : emoji_ok_hand_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp C &kp ENTER>; }
     emoji_ok_hand: emoji_ok_hand {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4362,7 +4362,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_pray_macro : emoji_pray_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp F &kp ENTER>; }
+    emoji_pray_macro : emoji_pray_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp F &kp ENTER>; }
     emoji_pray: emoji_pray {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4375,7 +4375,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_sweat_smile_macro : emoji_sweat_smile_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp N5 &kp ENTER>; }
+    emoji_sweat_smile_macro : emoji_sweat_smile_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp N5 &kp ENTER>; }
     emoji_sweat_smile: emoji_sweat_smile {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4388,7 +4388,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_disappointed_macro : emoji_disappointed_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N1 &kp E &kp ENTER>; }
+    emoji_disappointed_macro : emoji_disappointed_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N1 &kp E &kp ENTER>; }
     emoji_disappointed: emoji_disappointed {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4401,7 +4401,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_thinking_macro : emoji_thinking_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N1 &kp N4 &kp ENTER>; }
+    emoji_thinking_macro : emoji_thinking_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N1 &kp N4 &kp ENTER>; }
     emoji_thinking: emoji_thinking {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4414,7 +4414,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_tipping_hand_macro : emoji_person_tipping_hand_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N8 &kp N1 &kp ENTER>; }
+    emoji_person_tipping_hand_macro : emoji_person_tipping_hand_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N8 &kp N1 &kp ENTER>; }
     emoji_person_tipping_hand: emoji_person_tipping_hand {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4427,7 +4427,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_gesturing_ok_macro : emoji_person_gesturing_ok_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N6 &kp ENTER>; }
+    emoji_person_gesturing_ok_macro : emoji_person_gesturing_ok_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N6 &kp ENTER>; }
     emoji_person_gesturing_ok: emoji_person_gesturing_ok {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4440,7 +4440,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_bowing_macro : emoji_person_bowing_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N7 &kp ENTER>; }
+    emoji_person_bowing_macro : emoji_person_bowing_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N7 &kp ENTER>; }
     emoji_person_bowing: emoji_person_bowing {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4453,7 +4453,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_raising_hand_macro : emoji_person_raising_hand_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp B &kp ENTER>; }
+    emoji_person_raising_hand_macro : emoji_person_raising_hand_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp B &kp ENTER>; }
     emoji_person_raising_hand: emoji_person_raising_hand {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4466,7 +4466,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_gesturing_no_macro : emoji_person_gesturing_no_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N5 &kp ENTER>; }
+    emoji_person_gesturing_no_macro : emoji_person_gesturing_no_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N5 &kp ENTER>; }
     emoji_person_gesturing_no: emoji_person_gesturing_no {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4479,7 +4479,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_person_shrugging_macro : emoji_person_shrugging_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N3 &kp N7 &kp ENTER>; }
+    emoji_person_shrugging_macro : emoji_person_shrugging_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N3 &kp N7 &kp ENTER>; }
     emoji_person_shrugging: emoji_person_shrugging {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4492,7 +4492,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_checkoff_macro : emoji_checkoff_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N0 &kp N5 &kp ENTER>; }
+    emoji_checkoff_macro : emoji_checkoff_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N0 &kp N5 &kp ENTER>; }
     emoji_checkoff: emoji_checkoff {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4505,7 +4505,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_100_macro : emoji_100_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp A &kp F &kp ENTER>; }
+    emoji_100_macro : emoji_100_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp A &kp F &kp ENTER>; }
     emoji_100: emoji_100 {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4518,7 +4518,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_warning_macro : emoji_warning_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp A &kp N0 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_warning_macro : emoji_warning_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp A &kp N0 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_warning: emoji_warning {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4531,7 +4531,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_x_macro : emoji_x_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N4 &kp C &kp ENTER>; }
+    emoji_x_macro : emoji_x_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N4 &kp C &kp ENTER>; }
     emoji_x: emoji_x {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4544,7 +4544,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_question_macro : emoji_question_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N5 &kp N3 &kp ENTER>; }
+    emoji_question_macro : emoji_question_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N5 &kp N3 &kp ENTER>; }
     emoji_question: emoji_question {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4557,7 +4557,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_astronaut_macro : emoji_astronaut_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp D &kp N1 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N0 &kp D &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N8 &kp N0 &kp ENTER>; }
+    emoji_astronaut_macro : emoji_astronaut_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp D &kp N1 &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp N2 &kp N0 &kp N0 &kp D &kp ENTER>, <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N8 &kp N0 &kp ENTER>; }
     emoji_astronaut: emoji_astronaut {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4570,7 +4570,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_nerd_macro : emoji_nerd_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N1 &kp N3 &kp ENTER>; }
+    emoji_nerd_macro : emoji_nerd_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N9 &kp N1 &kp N3 &kp ENTER>; }
     emoji_nerd: emoji_nerd {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4583,7 +4583,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_sparkles_macro : emoji_sparkles_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N2 &kp N8 &kp ENTER>; }
+    emoji_sparkles_macro : emoji_sparkles_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N7 &kp N2 &kp N8 &kp ENTER>; }
     emoji_sparkles: emoji_sparkles {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4596,7 +4596,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_raised_hands_macro : emoji_raised_hands_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp C &kp ENTER>; }
+    emoji_raised_hands_macro : emoji_raised_hands_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp C &kp ENTER>; }
     emoji_raised_hands: emoji_raised_hands {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4609,7 +4609,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_point_up_macro : emoji_point_up_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N1 &kp D &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
+    emoji_point_up_macro : emoji_point_up_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N2 &kp N6 &kp N1 &kp D &kp ENTER>, <&macro_wait_time 10>, <&macro_tap &kp LC(LS(U)) &kp F &kp E &kp N0 &kp F &kp ENTER>; }
     emoji_point_up: emoji_point_up {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4622,7 +4622,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_thumbs_up_macro : emoji_thumbs_up_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp D &kp ENTER>; }
+    emoji_thumbs_up_macro : emoji_thumbs_up_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp D &kp ENTER>; }
     emoji_thumbs_up: emoji_thumbs_up {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4663,7 +4663,7 @@ MOD_RALT
         bindings = <&emoji_waning_crescent_moon>, <&emoji_waxing_crescent_moon>;
         mods = <MOD_LSFT>;
     };
-    emoji_moon_stars_magic_macro : emoji_moon_stars_magic_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp N8 &kp N4 &kp ENTER>; }
+    emoji_moon_stars_magic_macro : emoji_moon_stars_magic_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp N8 &kp N4 &kp ENTER>; }
     emoji_moon_stars_magic: emoji_moon_stars_magic {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4682,7 +4682,7 @@ MOD_RALT
         bindings = <&emoji_sparkles>, <&emoji_moon_stars_magic>;
         mods = <MOD_LSFT>;
     };
-    emoji_face_smile_up_macro : emoji_face_smile_up_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N2 &kp ENTER>; }
+    emoji_face_smile_up_macro : emoji_face_smile_up_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N2 &kp ENTER>; }
     emoji_face_smile_up: emoji_face_smile_up {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4695,7 +4695,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_face_smile_down_macro : emoji_face_smile_down_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N3 &kp ENTER>; }
+    emoji_face_smile_down_macro : emoji_face_smile_down_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N4 &kp N3 &kp ENTER>; }
     emoji_face_smile_down: emoji_face_smile_down {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4726,7 +4726,7 @@ MOD_RALT
         bindings = <&emoji_star_struck>, <&emoji_love_struck>;
         mods = <MOD_LSFT>;
     };
-    emoji_face_joke_wink_macro : emoji_face_joke_wink_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp N9 &kp ENTER>; }
+    emoji_face_joke_wink_macro : emoji_face_joke_wink_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp N9 &kp ENTER>; }
     emoji_face_joke_wink: emoji_face_joke_wink {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4739,7 +4739,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_face_joke_tounge_macro : emoji_face_joke_tounge_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N1 &kp C &kp ENTER>; }
+    emoji_face_joke_tounge_macro : emoji_face_joke_tounge_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N1 &kp C &kp ENTER>; }
     emoji_face_joke_tounge: emoji_face_joke_tounge {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4758,7 +4758,7 @@ MOD_RALT
         bindings = <&emoji_face_joke_wink>, <&emoji_face_joke_tounge>;
         mods = <MOD_LSFT>;
     };
-    emoji_face_fear_scared_macro : emoji_face_fear_scared_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N2 &kp N8 &kp ENTER>; }
+    emoji_face_fear_scared_macro : emoji_face_fear_scared_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N2 &kp N8 &kp ENTER>; }
     emoji_face_fear_scared: emoji_face_fear_scared {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4771,7 +4771,7 @@ MOD_RALT
 
 ))>;
     };
-    emoji_face_fear_scream_macro : emoji_face_fear_scream_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N3 &kp N1 &kp ENTER>; }
+    emoji_face_fear_scream_macro : emoji_face_fear_scream_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N3 &kp N1 &kp ENTER>; }
     emoji_face_fear_scream: emoji_face_fear_scream {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4790,7 +4790,7 @@ MOD_RALT
         bindings = <&emoji_face_fear_scared>, <&emoji_face_fear_scream>;
         mods = <MOD_LSFT>;
     };
-    emoji_face_surprise_dizzy_macro : emoji_face_surprise_dizzy_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N3 &kp N5 &kp ENTER>; }
+    emoji_face_surprise_dizzy_macro : emoji_face_surprise_dizzy_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N3 &kp N5 &kp ENTER>; }
     emoji_face_surprise_dizzy: emoji_face_surprise_dizzy {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4809,7 +4809,7 @@ MOD_RALT
         bindings = <&emoji_shocked_face>, <&emoji_face_surprise_dizzy>;
         mods = <MOD_LSFT>;
     };
-    emoji_gesture_attention_wave_macro : emoji_gesture_attention_wave_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp B &kp ENTER>; }
+    emoji_gesture_attention_wave_macro : emoji_gesture_attention_wave_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp B &kp ENTER>; }
     emoji_gesture_attention_wave: emoji_gesture_attention_wave {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4828,7 +4828,7 @@ MOD_RALT
         bindings = <&emoji_snap_fingers>, <&emoji_gesture_attention_wave>;
         mods = <MOD_LSFT>;
     };
-    emoji_gesture_approval_cool_macro : emoji_gesture_approval_cool_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp E &kp ENTER>; }
+    emoji_gesture_approval_cool_macro : emoji_gesture_approval_cool_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N0 &kp E &kp ENTER>; }
     emoji_gesture_approval_cool: emoji_gesture_approval_cool {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4859,7 +4859,7 @@ MOD_RALT
         bindings = <&emoji_sweat_smile>, <&emoji_cold_sweat>;
         mods = <MOD_LSFT>;
     };
-    emoji_gesture_despair_cry_macro : emoji_gesture_despair_cry_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N2 &kp N2 &kp ENTER>; }
+    emoji_gesture_despair_cry_macro : emoji_gesture_despair_cry_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N6 &kp N2 &kp N2 &kp ENTER>; }
     emoji_gesture_despair_cry: emoji_gesture_despair_cry {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4884,7 +4884,7 @@ MOD_RALT
         bindings = <&emoji_thinking>, <&emoji_monocle_face>;
         mods = <MOD_LSFT>;
     };
-    emoji_gesture_point_you_macro : emoji_gesture_point_you_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp F &kp N5 &kp ENTER>; }
+    emoji_gesture_point_you_macro : emoji_gesture_point_you_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp A &kp F &kp N5 &kp ENTER>; }
     emoji_gesture_point_you: emoji_gesture_point_you {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4903,7 +4903,7 @@ MOD_RALT
         bindings = <&emoji_point_up>, <&emoji_gesture_point_you>;
         mods = <MOD_LSFT>;
     };
-    emoji_gesture_thumbs_down_macro : emoji_gesture_thumbs_down_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp E &kp ENTER>; }
+    emoji_gesture_thumbs_down_macro : emoji_gesture_thumbs_down_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp E &kp ENTER>; }
     emoji_gesture_thumbs_down: emoji_gesture_thumbs_down {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -4922,7 +4922,7 @@ MOD_RALT
         bindings = <&emoji_thumbs_up>, <&emoji_gesture_thumbs_down>;
         mods = <MOD_LSFT>;
     };
-    emoji_gesture_hands_clap_macro : emoji_gesture_hands_clap_macro { compatible = "zmk,behavior-macro"; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp F &kp ENTER>; }
+    emoji_gesture_hands_clap_macro : emoji_gesture_hands_clap_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <1>; tap-ms = <1>; bindings = <&macro_tap &kp LC(LS(U)) &kp N1 &kp F &kp N4 &kp N4 &kp F &kp ENTER>; }
     emoji_gesture_hands_clap: emoji_gesture_hands_clap {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
