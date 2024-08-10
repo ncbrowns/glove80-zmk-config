@@ -426,12 +426,12 @@
 
         Symbol {
             bindings = <
-&trans  &trans                  &trans                        &trans                      &trans                                                                                                               &trans          &trans        &trans              &trans   &trans
-&trans  &trans                  &trans                        &trans                      &trans     &trans                                                                                       &trans       &trans          &trans        &trans              &trans   &trans
-&trans  &kp GRAVE               &td_xor                       &td_or                      &td_and    &sym_or_eq QUESTION QUESTION                                                                 &kp AT_SIGN  &curly_morph    &kp LS(RBRC)  &td_lt              &td_gt   &trans
-&trans  &sym_or_eq TILDE TILDE  &sym_or_eq ASTERISK ASTERISK  &td_minus                   &td_plus   &trans                                                                                       &kp DOLLAR   &paren_morph    &kp LS(RPAR)  &td_eq              &td_not  &trans
-&trans  &triple_bquote          &trans                        &sym_or_eq PERCENT PERCENT  &td_slash  &trans                        &flash_toggle_layer 4  &trans  &trans  &trans  &trans  &trans  &kp HASH     &bracket_morph  &kp RBKT      &sym_or_eq DOT DOT  &arrow   &trans
-&trans  &trans                  &trans                        &trans                      &trans                                   &trans                 &trans  &trans  &trans  &trans  &trans               &trans          &trans        &trans              &trans   &trans
+&trans  &trans          &trans        &trans       &trans                                                                                                    &trans                &trans                 &trans         &trans            &trans
+&trans  &trans          &trans        &trans       &trans         &trans                                                                        &trans       &trans                &trans                 &trans         &trans            &trans
+&trans  &kp GRAVE       &kp CARET     &kp PIPE     &kp AMPERSAND  &kp QUESTION                                                                  &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN  &kp GREATER_THAN  &trans
+&trans  &kp TILDE       &kp ASTERISK  &kp MINUS    &kp PLUS       &trans                                                                        &kp DOLLAR   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp EXCLAMATION   &trans
+&trans  &triple_bquote  &trans        &kp PERCENT  &kp SLASH      &kp BACKSLASH  &flash_toggle_layer 4  &trans  &trans  &trans  &trans  &trans  &kp HASH     &kp LEFT_BRACKET      &kp RBKT               &kp DOT        &arrow            &trans
+&trans  &trans          &trans        &trans       &trans                        &trans                 &trans  &trans  &trans  &trans  &trans               &trans                &trans                 &trans         &trans            &trans
             >;
         };
 
