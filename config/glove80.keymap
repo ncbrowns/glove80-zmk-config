@@ -254,48 +254,6 @@
             flavor = "hold-preferred";
             retro-tap;
         };
-
-        td_backspace: td_backspace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BACKSPACE";
-            #binding-cells = <0>;
-            bindings = <&thumb_layer 1 BACKSPACE>, <&tog 1>;
-        };
-
-        td_delete: td_delete {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_DELETE";
-            #binding-cells = <0>;
-            bindings = <&thumb_layer 2 DEL>, <&tog 2>;
-        };
-
-        td_esc: td_esc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ESC";
-            #binding-cells = <0>;
-            bindings = <&thumb_layer 3 ESCAPE>, <&tog 3>;
-        };
-
-        td_space: td_space {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SPACE";
-            #binding-cells = <0>;
-            bindings = <&thumb_layer 1 SPACE>, <&tog 1>;
-        };
-
-        td_enter: td_enter {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ENTER";
-            #binding-cells = <0>;
-            bindings = <&thumb_layer 2 ENTER>, <&tog 2>;
-        };
-
-        td_tab: td_tab {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_TAB";
-            #binding-cells = <0>;
-            bindings = <&thumb_layer 3 TAB>, <&tog 3>;
-        };
     };
 
     macros {
@@ -437,12 +395,12 @@
 
         Base {
             bindings = <
-&kp F1       &kp F2                 &kp F3                 &kp F4                  &kp F5                                                                                                                                          &kp F6                         &kp F7                   &kp F8                  &kp F9                     &kp F10
-&kp EQUAL    &kp N1                 &kp N2                 &kp N3                  &kp N4                        &kp N5                                                                                                    &kp N6  &kp N7                         &kp N8                   &kp N9                  &kp N0                     &kp MINUS
-&kp TAB      &kp Q                  &kp W                  &kp E                   &kp R                         &kp T                                                                                                     &kp Y   &kp U                          &kp I                    &kp O                   &kp P                      &kp BSLH
-&kp ESC      &home_row_left LGUI A  &home_row_left LALT S  &home_row_left LCTRL D  &home_row_left_index LSHFT F  &kp G                                                                                                     &kp H   &home_row_right_index RSHFT J  &home_row_right RCTRL K  &home_row_right RALT L  &home_row_right RGUI SEMI  &kp SQT
-&shift_caps  &kp Z                  &kp X                  &kp C                   &kp V                         &kp B   &td_esc        &thumb_mods LALT C_PP  &kp LGUI    &kp RGUI    &thumb_mods RALT C_MUTE  &td_tab    &kp N   &kp M                          &kp COMMA                &kp DOT                 &kp FSLH                   &shift_caps
-&kp LCTRL    &kp HOME               &kp END                &kp LEFT                &kp RIGHT                             &td_backspace  &td_delete             &magic 6 0  &magic 6 0  &td_enter                &td_space          &kp UP                         &kp DOWN                 &kp LBKT                &kp RBKT                   &kp INSERT
+&kp F1       &kp F2                 &kp F3                 &kp F4                  &kp F5                                                                                                                                                                &kp F6                         &kp F7                   &kp F8                  &kp F9                     &kp F10
+&kp EQUAL    &kp N1                 &kp N2                 &kp N3                  &kp N4                        &kp N5                                                                                                                          &kp N6  &kp N7                         &kp N8                   &kp N9                  &kp N0                     &kp MINUS
+&kp TAB      &kp Q                  &kp W                  &kp E                   &kp R                         &kp T                                                                                                                           &kp Y   &kp U                          &kp I                    &kp O                   &kp P                      &kp BSLH
+&kp ESC      &home_row_left LGUI A  &home_row_left LALT S  &home_row_left LCTRL D  &home_row_left_index LSHFT F  &kp G                                                                                                                           &kp H   &home_row_right_index RSHFT J  &home_row_right RCTRL K  &home_row_right RALT L  &home_row_right RGUI SEMI  &kp SQT
+&shift_caps  &kp Z                  &kp X                  &kp C                   &kp V                         &kp B   &thumb_layer 3 ESCAPE     &thumb_mods LALT C_PP  &kp LGUI    &kp RGUI    &thumb_mods RALT C_MUTE  &thumb_layer 3 TAB    &kp N   &kp M                          &kp COMMA                &kp DOT                 &kp FSLH                   &shift_caps
+&kp LCTRL    &kp HOME               &kp END                &kp LEFT                &kp RIGHT                             &thumb_layer 1 BACKSPACE  &thumb_layer 2 DELETE  &magic 6 0  &magic 6 0  &thumb_layer 2 ENTER     &thumb_layer 1 SPACE          &kp UP                         &kp DOWN                 &kp LBKT                &kp RBKT                   &kp INSERT
             >;
         };
 
