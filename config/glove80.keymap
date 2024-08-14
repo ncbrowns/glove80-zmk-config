@@ -284,12 +284,12 @@
 
         Navigation {
             bindings = <
-&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV  &kp C_PP   &kp C_NEXT                                                                                                                           &kp C_VOL_DN       &kp C_MUTE       &kp C_VOL_UP   &kp SCROLLLOCK  &kp PAUSE_BREAK
-&trans           &trans      &trans      &trans     &trans      &trans                                                                                               &trans              &trans             &trans           &trans         &trans          &trans
-&trans           &trans      &trans      &trans     &trans      &trans                                                                                               &kp HOME            &kp PAGE_DOWN      &kp PAGE_UP      &kp END        &thanks_pat     &trans
-&trans           &kp LGUI    &kp LALT    &kp LCTRL  &kp LSHFT   &trans                                                                                               &kp LEFT            &kp DOWN           &kp UP           &kp RIGHT      &trans          &trans
-&trans           &trans      &trans      &trans     &trans      &trans  &trans                 &trans  &trans                 &trans                 &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(PAGE_DOWN)  &kp LC(PAGE_UP)  &kp LC(RIGHT)  &trans          &trans
-&trans           &trans      &trans      &trans     &trans              &flash_toggle_layer 1  &trans  &flash_toggle_layer 1  &flash_toggle_layer 1  &trans  &trans                      &trans             &trans           &trans         &trans          &trans
+&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV  &kp C_PP   &kp C_NEXT                                                                                                            &kp C_VOL_DN       &kp C_MUTE       &kp C_VOL_UP   &kp SCROLLLOCK  &kp PAUSE_BREAK
+&trans           &trans      &trans      &trans     &trans      &trans                                                                                &trans              &trans             &trans           &trans         &trans          &trans
+&trans           &trans      &trans      &trans     &trans      &trans                                                                                &kp HOME            &kp PAGE_DOWN      &kp PAGE_UP      &kp END        &thanks_pat     &trans
+&trans           &kp LGUI    &kp LALT    &kp LCTRL  &kp LSHFT   &trans                                                                                &kp LEFT            &kp DOWN           &kp UP           &kp RIGHT      &trans          &trans
+&trans           &trans      &trans      &trans     &trans      &trans  &trans  &trans  &trans                 &trans                 &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(PAGE_DOWN)  &kp LC(PAGE_UP)  &kp LC(RIGHT)  &trans          &trans
+&trans           &trans      &trans      &trans     &trans              &trans  &trans  &flash_toggle_layer 1  &flash_toggle_layer 1  &trans  &trans                      &trans             &trans           &trans         &trans          &trans
             >;
         };
 
