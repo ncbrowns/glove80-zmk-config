@@ -93,7 +93,18 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&entercw>;
+            bindings = <&kp LSHIFT>, <&flash_toggle_layer 5>;
+        };
+
+        caps_word_hold_tap: caps_word_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPS_WORD_HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
         };
 
         thumb_mods: thumb_mods {
@@ -120,144 +131,6 @@
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
             retro-tap;
-        };
-
-        cwbackspace: cwbackspace {
-            compatible = "zmk,behavior-hold-tap";
-            label = "CWBACKSPACE";
-            bindings = <&exitcwlayer>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <2500>;
-            require-prior-idle-ms = <250>;
-            quick-tap-ms = <300>;
-            flavor = "hold-preferred";
-            retro-tap;
-        };
-
-        cwholdtap: cwholdtap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "CWHOLDTAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <0>;
-            bindings = <&cwsuspend>, <&cwsuspend>;
-        };
-
-        cwthumblayer: cwthumblayer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "CWTHUMBLAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <2500>;
-            require-prior-idle-ms = <250>;
-            quick-tap-ms = <300>;
-            flavor = "hold-preferred";
-            retro-tap;
-            bindings = <&exitcwlayer>, <&exitcwkey>;
-        };
-
-        cwthumbmods: cwthumbmods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "CWTHUMBMODS";
-            bindings = <&exitcwkey>, <&exitcwkey>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <2500>;
-            require-prior-idle-ms = <250>;
-            quick-tap-ms = <300>;
-            flavor = "hold-preferred";
-            retro-tap;
-        };
-
-        cw1: cw1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW1";
-            bindings = <&kp N1>, <&exitcwkey EXCLAMATION>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw2: cw2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW2";
-            bindings = <&kp N2>, <&exitcwkey AT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw3: cw3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW3";
-            bindings = <&kp N3>, <&exitcwkey HASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw4: cw4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW4";
-            bindings = <&kp N4>, <&exitcwkey HASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw5: cw5 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW5";
-            bindings = <&kp N5>, <&exitcwkey PERCENT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw6: cw6 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW6";
-            bindings = <&kp N6>, <&exitcwkey CARET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw7: cw7 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW7";
-            bindings = <&kp N7>, <&exitcwkey AMPERSAND>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw8: cw8 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW8";
-            bindings = <&kp N8>, <&exitcwkey ASTERISK>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw9: cw9 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW9";
-            bindings = <&kp N9>, <&exitcwkey LEFT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cw0: cw0 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CW0";
-            bindings = <&kp N0>, <&exitcwkey RIGHT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -319,6 +192,13 @@
             #binding-cells = <0>;
             bindings = <&kp LA(D) &kp LC(C) &kp ESCAPE &kp TAB>;
             label = "BROWSER_COPY_URL";
+        };
+
+        caps_word_exit: caps_word_exit {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &flash_toggle_layer 5>;
+            label = "CAPS_WORD_EXIT";
         };
 
         tab_switch: tab_switch {
@@ -384,41 +264,6 @@
             bindings = <&rgb_ug_status_macro &macro_param_1to1 &tog MACRO_PLACEHOLDER>;
             label = "FLASH_TOGGLE_LAYER";
         };
-
-        exitcwkey: trans_wrapper {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&flash_toggle_layer 5 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TRANS_WRAPPER";
-        };
-
-        entercw: caps_word_enter {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog 5 &caps_word>;
-            label = "CAPS_WORD_ENTER";
-        };
-
-        cwsuspend: cwsuspend {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&kp F24 &macro_param_1to1 &kp MACRO_PLACEHOLDER &caps_word>;
-            label = "CWSUSPEND";
-        };
-
-        exitcwlayer: exitcwlayer {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&flash_toggle_layer 5 &macro_param_1to1 &mo MACRO_PLACEHOLDER>;
-            label = "EXITCWLAYER";
-        };
-
-        exitcwmagic: exitcwmagic {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&flash_toggle_layer 5 &magic 7 0>;
-            label = "EXITCWMAGIC";
-        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -483,12 +328,12 @@
 
         CapsWord {
             bindings = <
-&exitcwkey F1      &exitcwkey F2    &exitcwkey F3       &exitcwkey F4    &exitcwkey F5                                                                                                                                                        &exitcwkey F6  &exitcwkey F7     &exitcwkey F8            &exitcwkey F9             &exitcwkey F10
-&exitcwkey EQUAL   &cw1             &cw2                &cw3             &cw4              &cw5                                                                                                                                       &cw6    &cw7           &cw8              &cw9                     &cw0                      &cwholdtap MINUS UNDERSCORE
-&exitcwkey TAB     &trans           &trans              &trans           &trans            &trans                                                                                                                                     &trans  &trans         &trans            &trans                   &trans                    &exitcwkey BACKSLASH
-&exitcwkey ESCAPE  &trans           &cwholdtap S LS(S)  &trans           &trans            &trans                                                                                                                                     &trans  &trans         &trans            &trans                   &exitcwkey SEMICOLON      &exitcwkey SQT
-&kp LSHIFT         &trans           &trans              &trans           &trans            &trans  &cwthumblayer 4 ESC       &cwthumbmods LALT C_PP  &exitcwkey LWIN  &exitcwkey RWIN  &cwthumbmods RALT C_MUTE  &cwthumblayer 2 TAB  &trans  &trans         &exitcwkey COMMA  &exitcwkey PERIOD        &exitcwkey SLASH          &kp RSHIFT
-&trans             &exitcwkey HOME  &exitcwkey END      &exitcwkey LEFT  &exitcwkey RIGHT          &cwbackspace 1 BACKSPACE  &cwthumblayer 3 DEL     &exitcwmagic     &exitcwmagic     &cwthumblayer 3 ENTER     &exitcwkey                   &exitcwkey UP  &exitcwkey DOWN   &exitcwkey LEFT_BRACKET  &exitcwkey RIGHT_BRACKET  &exitcwkey INS
+&caps_word_exit F1      &caps_word_exit F2    &caps_word_exit F3           &caps_word_exit F4    &caps_word_exit F5                                                                                                                                                  &caps_word_exit F6        &caps_word_exit F7     &caps_word_exit F8            &caps_word_exit F9             &caps_word_exit F10
+&caps_word_exit EQUAL   &kp N1                &kp N2                       &kp N3                &kp N4                 &kp N5                                                                                                                            &kp N6     &kp N7                    &kp N8                 &kp N9                        &kp N0                         &caps_word_hold_tap MINUS LS(MINUS)
+&caps_word_exit TAB     &kp LS(Q)             &kp LS(W)                    &kp LS(E)             &kp LS(R)              &kp LS(T)                                                                                                                         &kp LS(Y)  &kp LS(U)                 &kp LS(I)              &kp LS(O)                     &kp LS(P)                      &caps_word_exit BACKSLASH
+&caps_word_exit ESCAPE  &kp LS(A)             &caps_word_hold_tap S LS(S)  &kp LS(D)             &kp LS(F)              &kp LS(G)                                                                                                                         &kp LS(H)  &kp LS(J)                 &kp LS(K)              &kp LS(L)                     &caps_word_exit SEMI           &caps_word_exit SQT
+&flash_toggle_layer 5   &kp LS(Z)             &kp LS(X)                    &kp LS(C)             &kp LS(V)              &kp LS(B)  &trans  &trans               &trans                 &trans                 &trans               &trans                 &kp LS(N)  &kp LS(M)                 &caps_word_exit COMMA  &caps_word_exit PERIOD        &caps_word_exit SLASH          &flash_toggle_layer 5
+&trans                  &caps_word_exit HOME  &caps_word_exit END          &caps_word_exit LEFT  &caps_word_exit RIGHT             &trans  &caps_word_exit DEL  &flash_toggle_layer 5  &flash_toggle_layer 5  &caps_word_exit RET  &caps_word_exit SPACE             &caps_word_exit UP_ARROW  &caps_word_exit DOWN   &caps_word_exit LEFT_BRACKET  &caps_word_exit RIGHT_BRACKET  &caps_word_exit INS
             >;
         };
 
