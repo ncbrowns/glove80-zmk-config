@@ -131,6 +131,95 @@
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
             retro-tap;
+
+        cw1: cw1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW1";
+            bindings = <&kp N1>, <&caps_word_exit EXCLAMATION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw2: cw2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW2";
+            bindings = <&kp N2>, <&caps_word_exit AT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw3: cw3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW3";
+            bindings = <&kp N3>, <&caps_word_exit HASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw4: cw4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW4";
+            bindings = <&kp N4>, <&caps_word_exit HASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw5: cw5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW5";
+            bindings = <&kp N5>, <&caps_word_exit PERCENT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw6: cw6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW6";
+            bindings = <&kp N6>, <&caps_word_exit CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw7: cw7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW7";
+            bindings = <&kp N7>, <&caps_word_exit AMPERSAND>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw8: cw8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW8";
+            bindings = <&kp N8>, <&caps_word_exit ASTERISK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw9: cw9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW9";
+            bindings = <&kp N9>, <&caps_word_exit LEFT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw0: cw0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW0";
+            bindings = <&kp N0>, <&caps_word_exit RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
