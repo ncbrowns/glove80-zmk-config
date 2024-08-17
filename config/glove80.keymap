@@ -122,15 +122,6 @@
             retro-tap;
         };
 
-        cwnumber: cwnumber {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CWNUMBER";
-            bindings = <&trans>, <&exitcwkey>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         cwbackspace: cwbackspace {
             compatible = "zmk,behavior-hold-tap";
             label = "CWBACKSPACE";
@@ -177,6 +168,96 @@
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
             retro-tap;
+        };
+
+        cw1: cw1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW1";
+            bindings = <&kp N1>, <&exitcwkey EXCLAMATION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw2: cw2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW2";
+            bindings = <&kp N2>, <&exitcwkey AT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw3: cw3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW3";
+            bindings = <&kp N3>, <&exitcwkey HASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw4: cw4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW4";
+            bindings = <&kp N4>, <&exitcwkey HASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw5: cw5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW5";
+            bindings = <&kp N5>, <&exitcwkey PERCENT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw6: cw6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW6";
+            bindings = <&kp N6>, <&exitcwkey CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw7: cw7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW7";
+            bindings = <&kp N7>, <&exitcwkey AMPERSAND>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw8: cw8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW8";
+            bindings = <&kp N8>, <&exitcwkey ASTERISK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw9: cw9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW9";
+            bindings = <&kp N9>, <&exitcwkey LEFT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cw0: cw0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CW0";
+            bindings = <&kp N0>, <&exitcwkey RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -402,12 +483,12 @@
 
         CapsWord {
             bindings = <
-&exitcwkey F1      &exitcwkey F2    &exitcwkey F3       &exitcwkey F4    &exitcwkey F5                                                                                                                                                              &exitcwkey F6  &exitcwkey F7     &exitcwkey F8            &exitcwkey F9             &exitcwkey F10
-&exitcwkey EQUAL   &cwnumber        &cwnumber           &cwnumber        &cwnumber         &cwnumber                                                                                                                                     &cwnumber  &cwnumber      &cwnumber         &cwnumber                &cwnumber                 &cwholdtap MINUS UNDERSCORE
-&exitcwkey TAB     &trans           &trans              &trans           &trans            &trans                                                                                                                                        &trans     &trans         &trans            &trans                   &trans                    &exitcwkey BACKSLASH
-&exitcwkey ESCAPE  &trans           &cwholdtap S LS(S)  &trans           &trans            &trans                                                                                                                                        &trans     &trans         &trans            &trans                   &exitcwkey SEMICOLON      &exitcwkey SQT
-&kp LSHIFT         &trans           &trans              &trans           &trans            &trans     &cwthumblayer 4 ESC       &cwthumbmods LALT C_PP  &exitcwkey LWIN  &exitcwkey RWIN  &cwthumbmods RALT C_MUTE  &cwthumblayer 2 TAB  &trans     &trans         &exitcwkey COMMA  &exitcwkey PERIOD        &exitcwkey SLASH          &kp RSHIFT
-&trans             &exitcwkey HOME  &exitcwkey END      &exitcwkey LEFT  &exitcwkey RIGHT             &cwbackspace 1 BACKSPACE  &cwthumblayer 3 DEL     &exitcwmagic     &exitcwmagic     &cwthumblayer 3 ENTER     &exitcwkey                      &exitcwkey UP  &exitcwkey DOWN   &exitcwkey LEFT_BRACKET  &exitcwkey RIGHT_BRACKET  &exitcwkey INS
+&exitcwkey F1      &exitcwkey F2    &exitcwkey F3       &exitcwkey F4    &exitcwkey F5                                                                                                                                                        &exitcwkey F6  &exitcwkey F7     &exitcwkey F8            &exitcwkey F9             &exitcwkey F10
+&exitcwkey EQUAL   &cw1             &cw2                &cw3             &cw4              &cw5                                                                                                                                       &cw6    &cw7           &cw8              &cw9                     &cw0                      &cwholdtap MINUS UNDERSCORE
+&exitcwkey TAB     &trans           &trans              &trans           &trans            &trans                                                                                                                                     &trans  &trans         &trans            &trans                   &trans                    &exitcwkey BACKSLASH
+&exitcwkey ESCAPE  &trans           &cwholdtap S LS(S)  &trans           &trans            &trans                                                                                                                                     &trans  &trans         &trans            &trans                   &exitcwkey SEMICOLON      &exitcwkey SQT
+&kp LSHIFT         &trans           &trans              &trans           &trans            &trans  &cwthumblayer 4 ESC       &cwthumbmods LALT C_PP  &exitcwkey LWIN  &exitcwkey RWIN  &cwthumbmods RALT C_MUTE  &cwthumblayer 2 TAB  &trans  &trans         &exitcwkey COMMA  &exitcwkey PERIOD        &exitcwkey SLASH          &kp RSHIFT
+&trans             &exitcwkey HOME  &exitcwkey END      &exitcwkey LEFT  &exitcwkey RIGHT          &cwbackspace 1 BACKSPACE  &cwthumblayer 3 DEL     &exitcwmagic     &exitcwmagic     &cwthumblayer 3 ENTER     &exitcwkey                   &exitcwkey UP  &exitcwkey DOWN   &exitcwkey LEFT_BRACKET  &exitcwkey RIGHT_BRACKET  &exitcwkey INS
             >;
         };
 
