@@ -131,6 +131,7 @@
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
             retro-tap;
+        };
 
         cw1: cw1 {
             compatible = "zmk,behavior-mod-morph";
