@@ -125,7 +125,7 @@
         cwnumber: cwnumber {
             compatible = "zmk,behavior-mod-morph";
             label = "CWNUMBER";
-            bindings = <&trans>, <&exitcw>;
+            bindings = <&trans>, <&exitcwkey>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -134,7 +134,7 @@
         cwbackspace: cwbackspace {
             compatible = "zmk,behavior-hold-tap";
             label = "CWBACKSPACE";
-            bindings = <&exitcw>, <&kp>;
+            bindings = <&exitcwlayer>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <2500>;
@@ -152,6 +152,31 @@
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
             bindings = <&cwsuspend>, <&cwsuspend>;
+        };
+
+        cwthumblayer: cwthumblayer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CWTHUMBLAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <2500>;
+            require-prior-idle-ms = <250>;
+            quick-tap-ms = <300>;
+            flavor = "hold-preferred";
+            retro-tap;
+            bindings = <&exitcwlayer>, <&exitcwkey>;
+        };
+
+        cwthumbmods: cwthumbmods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CWTHUMBMODS";
+            bindings = <&exitcwkey>, <&exitcwkey>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <2500>;
+            require-prior-idle-ms = <250>;
+            quick-tap-ms = <300>;
+            flavor = "hold-preferred";
+            retro-tap;
         };
     };
 
@@ -279,10 +304,10 @@
             label = "FLASH_TOGGLE_LAYER";
         };
 
-        exitcw: trans_wrapper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&trans &flash_toggle_layer 5>;
+        exitcwkey: trans_wrapper {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&flash_toggle_layer 5 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TRANS_WRAPPER";
         };
 
@@ -298,6 +323,20 @@
             #binding-cells = <1>;
             bindings = <&kp F24 &macro_param_1to1 &kp MACRO_PLACEHOLDER &caps_word>;
             label = "CWSUSPEND";
+        };
+
+        exitcwlayer: exitcwlayer {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&flash_toggle_layer 5 &macro_param_1to1 &mo MACRO_PLACEHOLDER>;
+            label = "EXITCWLAYER";
+        };
+
+        exitcwmagic: exitcwmagic {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&flash_toggle_layer 5 &magic 7 0>;
+            label = "EXITCWMAGIC";
         };
     };
 
@@ -363,12 +402,12 @@
 
         CapsWord {
             bindings = <
-&exitcw     &exitcw    &exitcw             &exitcw    &exitcw                                                                                                 &exitcw    &exitcw    &exitcw    &exitcw    &exitcw
-&exitcw     &cwnumber  &cwnumber           &cwnumber  &cwnumber  &cwnumber                                                                         &cwnumber  &cwnumber  &cwnumber  &cwnumber  &cwnumber  &cwholdtap MINUS UNDERSCORE
-&exitcw     &trans     &trans              &trans     &trans     &trans                                                                            &trans     &trans     &trans     &trans     &trans     &exitcw
-&exitcw     &trans     &cwholdtap S LS(S)  &trans     &trans     &trans                                                                            &trans     &trans     &trans     &trans     &exitcw    &exitcw
-&kp LSHIFT  &trans     &trans              &trans     &trans     &trans     &exitcw                   &exitcw  &exitcw  &exitcw  &exitcw  &exitcw  &trans     &trans     &exitcw    &exitcw    &exitcw    &kp RSHIFT
-&trans      &exitcw    &exitcw             &exitcw    &exitcw               &cwbackspace 0 BACKSPACE  &exitcw  &exitcw  &trans   &exitcw  &exitcw             &exitcw    &exitcw    &exitcw    &exitcw    &exitcw
+&exitcwkey F1      &exitcwkey F2    &exitcwkey F3       &exitcwkey F4    &exitcwkey F5                                                                                                                                                              &exitcwkey F6  &exitcwkey F7     &exitcwkey F8            &exitcwkey F9             &exitcwkey F10
+&exitcwkey EQUAL   &cwnumber        &cwnumber           &cwnumber        &cwnumber         &cwnumber                                                                                                                                     &cwnumber  &cwnumber      &cwnumber         &cwnumber                &cwnumber                 &cwholdtap MINUS UNDERSCORE
+&exitcwkey TAB     &trans           &trans              &trans           &trans            &trans                                                                                                                                        &trans     &trans         &trans            &trans                   &trans                    &exitcwkey BACKSLASH
+&exitcwkey ESCAPE  &trans           &cwholdtap S LS(S)  &trans           &trans            &trans                                                                                                                                        &trans     &trans         &trans            &trans                   &exitcwkey SEMICOLON      &exitcwkey SQT
+&kp LSHIFT         &trans           &trans              &trans           &trans            &trans     &cwthumblayer 4 ESC       &cwthumbmods LALT C_PP  &exitcwkey LWIN  &exitcwkey RWIN  &cwthumbmods RALT C_MUTE  &cwthumblayer 2 TAB  &trans     &trans         &exitcwkey COMMA  &exitcwkey PERIOD        &exitcwkey SLASH          &kp RSHIFT
+&trans             &exitcwkey HOME  &exitcwkey END      &exitcwkey LEFT  &exitcwkey RIGHT             &cwbackspace 1 BACKSPACE  &cwthumblayer 3 DEL     &exitcwmagic     &exitcwmagic     &cwthumblayer 3 ENTER     &exitcwkey                      &exitcwkey UP  &exitcwkey DOWN   &exitcwkey LEFT_BRACKET  &exitcwkey RIGHT_BRACKET  &exitcwkey INS
             >;
         };
 
