@@ -498,12 +498,12 @@
 
         LeftWithMouse {
             bindings = <
-&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV                &kp C_PP           &kp C_NEXT                                                                                                                                    &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
-&trans           &trans      &trans                    &trans             &trans                &trans                                                                                                          &trans  &trans        &trans      &trans        &trans          &trans
-&kp LC(LA(F3))   &trans      &ctrltab LS(TAB) LC(TAB)  &alttab 0 LA(TAB)  &ctrltab TAB LC(TAB)  &trans                                                                                                          &trans  &trans        &trans      &trans        &thanks_pat     &trans
-&kp LC(LA(F2))   &sk LGUI    &sk LALT                  &sk LCTRL          &sk LSHFT             &trans                                                                                                          &trans  &kp RSHIFT    &kp RCTRL   &kp RALT      &kp RGUI        &trans
-&kp LA(LC(F1))   &kp LC(Z)   &kp LC(X)                 &kp LC(C)          &kp LC(V)             &browser_copy_url  &trans  &trans  &trans                 &trans                 &trans  &flash_toggle_layer 2  &trans  &trans        &trans      &trans        &trans          &trans
-&trans           &trans      &trans                    &trans             &trans                                   &trans  &trans  &flash_toggle_layer 2  &flash_toggle_layer 2  &trans  &trans                         &trans        &trans      &trans        &trans          &trans
+&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV                    &kp C_PP           &kp C_NEXT                                                                                                                                    &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
+&trans           &trans      &trans                        &trans             &trans                &trans                                                                                                          &trans  &trans        &trans      &trans        &trans          &trans
+&kp LC(LA(F3))   &trans      &ctrltab LS(TAB) LC(LS(TAB))  &alttab 0 LA(TAB)  &ctrltab TAB LC(TAB)  &trans                                                                                                          &trans  &trans        &trans      &trans        &thanks_pat     &trans
+&kp LC(LA(F2))   &sk LGUI    &sk LALT                      &sk LCTRL          &sk LSHFT             &trans                                                                                                          &trans  &kp RSHIFT    &kp RCTRL   &kp RALT      &kp RGUI        &trans
+&kp LA(LC(F1))   &kp LC(Z)   &kp LC(X)                     &kp LC(C)          &kp LC(V)             &browser_copy_url  &trans  &trans  &trans                 &trans                 &trans  &flash_toggle_layer 2  &trans  &trans        &trans      &trans        &trans          &trans
+&trans           &trans      &trans                        &trans             &trans                                   &trans  &trans  &flash_toggle_layer 2  &flash_toggle_layer 2  &trans  &trans                         &trans        &trans      &trans        &trans          &trans
             >;
         };
 
