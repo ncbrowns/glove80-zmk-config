@@ -429,7 +429,7 @@
                 <&macro_press>,
                 <&kp LALT>,
                 <&macro_tap>,
-                <&kp TAB &to 6>;
+                <&kp TAB &flash_toggle_layer 6>;
 
             label = "ENTERALTTAB";
         };
@@ -437,7 +437,11 @@
         exitat: exitalttab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LALT &to 0>;
+            bindings =
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&flash_toggle_layer 6>;
 
             label = "EXITALTTAB";
         };
