@@ -272,7 +272,17 @@
             bindings = <&enterat>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <300>;
+            flavor = "tap-preferred";
+        };
+
+        ctrltab: ctrltab {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRLTAB";
+            bindings = <&enterct>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
             flavor = "tap-preferred";
         };
     };
@@ -439,11 +449,23 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LALT &kp LCTRL>,
                 <&macro_tap>,
                 <&flash_toggle_layer 6>;
 
             label = "EXITALTTAB";
+        };
+
+        enterct: enterct {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &flash_toggle_layer 6>;
+
+            label = "ENTERCT";
         };
     };
 
@@ -476,12 +498,12 @@
 
         LeftWithMouse {
             bindings = <
-&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV                 &kp C_PP           &kp C_NEXT                                                                                                                                     &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
-&trans           &trans      &trans                     &trans             &trans                 &trans                                                                                                          &trans  &trans        &trans      &trans        &trans          &trans
-&kp LC(LA(F3))   &trans      &tab_switch LCTRL LS(TAB)  &alttab 0 LA(TAB)  &tab_switch LCTRL TAB  &trans                                                                                                          &trans  &trans        &trans      &trans        &thanks_pat     &trans
-&kp LC(LA(F2))   &sk LGUI    &sk LALT                   &sk LCTRL          &sk LSHFT              &trans                                                                                                          &trans  &kp RSHIFT    &kp RCTRL   &kp RALT      &kp RGUI        &trans
-&kp LA(LC(F1))   &kp LC(Z)   &kp LC(X)                  &kp LC(C)          &kp LC(V)              &browser_copy_url  &trans  &trans  &trans                 &trans                 &trans  &flash_toggle_layer 2  &trans  &trans        &trans      &trans        &trans          &trans
-&trans           &trans      &trans                     &trans             &trans                                    &trans  &trans  &flash_toggle_layer 2  &flash_toggle_layer 2  &trans  &trans                         &trans        &trans      &trans        &trans          &trans
+&kp PRINTSCREEN  &kp SYSREQ  &kp C_PREV                &kp C_PP           &kp C_NEXT                                                                                                                                    &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp SCROLLLOCK  &kp PAUSE_BREAK
+&trans           &trans      &trans                    &trans             &trans                &trans                                                                                                          &trans  &trans        &trans      &trans        &trans          &trans
+&kp LC(LA(F3))   &trans      &ctrltab LS(TAB) LC(TAB)  &alttab 0 LA(TAB)  &ctrltab TAB LC(TAB)  &trans                                                                                                          &trans  &trans        &trans      &trans        &thanks_pat     &trans
+&kp LC(LA(F2))   &sk LGUI    &sk LALT                  &sk LCTRL          &sk LSHFT             &trans                                                                                                          &trans  &kp RSHIFT    &kp RCTRL   &kp RALT      &kp RGUI        &trans
+&kp LA(LC(F1))   &kp LC(Z)   &kp LC(X)                 &kp LC(C)          &kp LC(V)             &browser_copy_url  &trans  &trans  &trans                 &trans                 &trans  &flash_toggle_layer 2  &trans  &trans        &trans      &trans        &trans          &trans
+&trans           &trans      &trans                    &trans             &trans                                   &trans  &trans  &flash_toggle_layer 2  &flash_toggle_layer 2  &trans  &trans                         &trans        &trans      &trans        &trans          &trans
             >;
         };
 
@@ -520,12 +542,12 @@
 
         TabSwitcher {
             bindings = <
-&none    &none  &none        &none     &none                                                                          &none          &none         &none    &none  &none
-&none    &none  &none        &none     &none      &none                                                  &none        &none          &none         &none    &none  &none
-&none    &none  &none        &none     &none      &none                                                  &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP   &kp END  &none  &none
-&exitat  &none  &kp LS(TAB)  &none     &kp TAB    &none                                                  &kp LS(TAB)  &kp DOWN       &kp UP_ARROW  &kp TAB  &none  &none
-&none    &none  &none        &none     &none      &none  &exitat  &none  &none  &none  &none    &none    &none        &none          &none         &none    &none  &none
-&none    &none  &none        &kp LEFT  &kp RIGHT         &none    &none  &none  &none  &exitat  &exitat               &kp UP_ARROW   &kp DOWN      &none    &none  &none
+&none    &none  &none  &none     &none                                                                          &none          &none         &none    &none  &none
+&none    &none  &none  &none     &none      &none                                                  &none        &none          &none         &none    &none  &none
+&none    &none  &none  &none     &none      &none                                                  &kp HOME     &kp PAGE_DOWN  &kp PAGE_UP   &kp END  &none  &none
+&exitat  &none  &none  &none     &none      &none                                                  &kp LS(TAB)  &kp DOWN       &kp UP_ARROW  &kp TAB  &none  &none
+&none    &none  &none  &none     &none      &none  &exitat  &none  &none  &none  &none    &none    &none        &none          &none         &none    &none  &none
+&none    &none  &none  &kp LEFT  &kp RIGHT         &none    &none  &none  &none  &exitat  &exitat               &kp UP_ARROW   &kp DOWN      &none    &none  &none
             >;
         };
 
